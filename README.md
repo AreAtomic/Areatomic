@@ -18,7 +18,7 @@ Design is fun and I love it
 ## Adventurer🔭
 24hours is never enough
 - Self learning
-- Entreprener htt://trainpreddict.fr and http://aureliensebe.com
+- Entreprener http://trainpreddict.fr and http://aureliensebe.com
 - Cyclist
 
 <!--
