@@ -1,0 +1,9 @@
+.bouton-accueil {
+    display: grid;
+    align-items: center;
+}
+
+.bouton-accueil .button {
+    box-shadow: inset -5px -5px 4px rgba(0, 0, 0, 0.1), inset 3px 3px 4px rgba(239, 251, 248, 0.4);
+}
+

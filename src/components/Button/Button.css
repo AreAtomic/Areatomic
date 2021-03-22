@@ -1,0 +1,10 @@
+.button {
+    font-family: 'Rubik', sans-serif;
+    border: none;
+    padding: 0 30px;
+    margin: 0 auto;
+}
+
+.button.is-info {
+    box-shadow: inset -4px -4px 4px rgba(0, 0, 0, 0.25), inset 4px 4px 4px rgba(239, 251, 248, 0.2);
+}

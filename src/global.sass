@@ -1,0 +1,71 @@
+@charset "utf-8"
+
+// Set your brand colors
+$black: #303541
+$green-dark: #25444F
+$green-dark-light: #1A535C
+$green: #32D3B0
+$green-light: #91E7D4
+$white: #EFFBF8
+
+// Update Bulma's global variables
+$primary: $green
+$text: $black
+$link: $green-light
+$input-color: $black
+$input-disabled-color: $green-dark-light
+$input-radius: 10px
+$link-hover: $green
+$input-hover-border-color: $white
+$input-hover-color: $white
+$input-focus-border-color: $white
+$link-visited: $green-dark
+$info: $green-dark-light
+$light: $white
+$widescreen-enabled: true
+$tablet: 900px 
+$fullhd-enabled: true
+
+// Update some of Bulma's component variables
+$body-background-color: $white
+$control-border-width: 2px
+$input-border-color: transparent
+$input-shadow: none
+
+//Navbar
+$navbar-background-color: $green
+$navbar-item-color: $black
+$navbar-item-hover-background-color: #9efddd
+$navbar-item-hover-color: #000046
+$navbar-dropdown-arrow: $black
+$navbar-dropdown-background-color : #9efddd
+$navbar-height: 4.25rem
+$navbar-item-img-max-height: 3rem
+
+// Import only what you need from Bulma
+@import "../node_modules/bulma/bulma.sass";
+@import url('https://fonts.googleapis.com/css2?family=Karla&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+html,
+body
+    padding: 0
+    margin: 0
+    font-family: 'Karla', sans-serif
+
+a
+    color: inherit
+    text-decoration: none
+
+*
+    box-sizing: border-box
+
+h1
+    font-size: 35px
+    color: $black
+
+h2
+    font-size: 27px
+
+h1, h2, h3, h4, h5, h6 
+    font-family: 'Rubik', sans-serif
