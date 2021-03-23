@@ -3,8 +3,8 @@ import React, { useState } from 'react'
 // Composants
 import ButtonDark from '../Button/Button.dark'
 import Logo from '../Logo/Logo'
-import menu from '../../Menu.png'
-import close from '../../close.png'
+import menu from '../../img/Menu.png'
+import close from '../../img/close.png'
 
 const Navbar = () => {
     const [active, setActive] = useState(false)

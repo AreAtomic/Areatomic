@@ -4,9 +4,9 @@ import React, { useState } from 'react'
 
 // Composants
 import Logo from '../Logo/Logo'
-import github from '../../Github.png'
-import linkedin from '../../Linkedin.png'
-import trainpreddict from '../../TrainPreddict.png'
+import github from '../../img/Github.png'
+import linkedin from '../../img/Linkedin.png'
+import trainpreddict from '../../img/TrainPreddict.png'
 import ButtonGreen from '../Button/Button.green'
 
 const Accueil = (props) => {
@@ -32,12 +32,12 @@ const Accueil = (props) => {
 
     return (
         <div className="container">
-            <div className="column is-centered mt-6" style={{ width: '96vw' }}>
+            <div className="column is-centered mt-6">
                 <h1 className="has-text-centered mt-6">Aurélien Sèbe</h1>
                 <div style={{ display: 'grid' }}>
                     <Logo width={150} />
                 </div>
-                <h2 className="has-text-centered write">{text}</h2>
+                <h3 className="has-text-centered write">{text}</h3>
                 <div className="columns is-mobile mt-6">
                     <div className="column">
                         <div style={{ display: 'grid' }}>
@@ -72,9 +72,9 @@ const Accueil = (props) => {
                         <h5 className="has-text-centered">TrainPreddict</h5>
                     </a>
                 </div>
-                <div className="bouton-accueil mt-5">
+                <a href="/competences" className="bouton-accueil mt-5">
                     <ButtonGreen value="Me connaître" />
-                </div>
+                </a>
             </div>
         </div>
     )

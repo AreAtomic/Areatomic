@@ -3,18 +3,27 @@ import './global.sass'
 
 // React, Router
 import React from 'react'
-import {Switch, Root} from 'react-router-dom'
+import { Switch, Router, Route } from 'react-router-dom'
+
+import { createBrowserHistory } from 'history';
 
 // Composants
-import logo from './LogoAS.png'
 import Navbar from './components/Navbar/Navbar'
 import Accueil from './components/Accueil/Accueil'
+import SliderSkill from './components/Slider/Slider.skills'
+
+const history = createBrowserHistory();
 
 const App = () => {
     return (
-        <div className="App">
+        <div>
             <Navbar />
-            <Accueil />
+            <Router history={history}>
+                <Switch>
+                    <Route exact path="/" component={Accueil} />
+                    <Route exact path="/competences" component={SliderSkill}/>
+                </Switch>
+            </Router>
         </div>
     )
 }

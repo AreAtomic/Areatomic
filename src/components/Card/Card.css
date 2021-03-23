@@ -1,0 +1,75 @@
+.container {
+    width: 80vw;
+}
+
+.container.foncee {
+    background: #1A535C;
+    color: #EFFBF8;
+    padding: 10px;
+    border-radius: 10px;
+    height: 68.5vh;
+}
+
+.container.foncee .is-success {
+    color: #32D3B0;
+}
+
+
+.container.green {
+    background: #32D3B0;
+    color: #EFFBF8;
+    padding: 10px;
+    border-radius: 10px;
+    height: 68.5vh;
+}
+
+.container.green .is-success {
+    color: #1A535C;
+}
+
+.container.white {
+    background: #91E7D4;
+    color: #1A535C;
+    padding: 10px;
+    border-radius: 10px;
+    height: 68.5vh;
+}
+
+.percent {
+    background: #EFFBF8;
+    height: 20px;
+    padding: 1px;
+    border-radius: 2px;
+}
+
+.percent>div {
+    height: 2px;
+}
+
+.slider {
+    display: grid;
+}
+
+.slide-item {
+    display: none;
+}
+
+.slide-item.active {
+    display: block;
+}
+
+.pagination-next,
+.pagination-previous {
+    border: none;
+    background: transparent !important;
+    height: 80px;
+    width: 80px;
+}
+
+.pagination-next>img {
+    margin-left: auto;
+}
+
+.pagination-previous>img {
+    margin-right: auto;
+}
