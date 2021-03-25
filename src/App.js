@@ -11,6 +11,7 @@ import { createBrowserHistory } from 'history';
 import Navbar from './components/Navbar/Navbar'
 import Accueil from './components/Accueil/Accueil'
 import SliderSkill from './components/Slider/Slider.skills'
+import SliderTimeline from './components/Slider/Slider.timeline'
 
 const history = createBrowserHistory();
 
@@ -22,6 +23,7 @@ const App = () => {
                 <Switch>
                     <Route exact path="/" component={Accueil} />
                     <Route exact path="/competences" component={SliderSkill}/>
+                    <Route exact path="/parcours" component={SliderTimeline}/>
                 </Switch>
             </Router>
         </div>
