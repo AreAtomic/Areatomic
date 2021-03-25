@@ -9,14 +9,8 @@ import CardFoncee from '../Card/Card.foncee'
 import CardGreen from '../Card/Card.green'
 import CardWhite from '../Card/Card.white'
 // Images
-import Node from '../../img/node.png'
-import Mongo from '../../img/leaf.png'
-import ReactJS from '../../img/React.png'
-import Express from '../../img/Express.png'
 import Next from '../../img/Next.png'
-import Figma from '../../img/Figma.png'
-import Css from '../../img/Css.png'
-import Javascript from '../../img/Javascript.png'
+
 
 const SliderTimeline = () => {
     const [index, setIndex] = useState(0)
@@ -37,7 +31,6 @@ const SliderTimeline = () => {
         }
     }
 
-    console.log(index)
     return (
         <div className="container">
             <h1 className="has-text-centered my-2">Parcours</h1>

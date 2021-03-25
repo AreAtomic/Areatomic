@@ -1,0 +1,71 @@
+.square {
+    position: relative;
+    height: 133px;
+    display: grid;
+    border-radius: 10px;
+    padding-top: 7px;
+    filter: drop-shadow(2px 4px 10px rgba(48, 53, 65, 0.4));
+    overflow: hidden;
+    font-weight: medium;
+}
+
+.square.green {
+    color: #EFFBF8;
+}
+
+.square.green h3, .square.clair h3 {
+    color: #1A535C;
+    font-weight: bold;
+}
+
+.square.foncee {
+    color: #EFFBF8;
+}
+
+.square.clair {
+    color: rgb(25, 36, 33);
+}
+
+.square.foncee h3 {
+    color: #32d3b0;
+    font-weight: bold;
+}
+
+.green .background {
+    background: #32d3b0e3;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    border-radius: 10px;
+    z-index: -1;
+}
+
+.foncee .background {
+    background: #1A535Ce3;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    border-radius: 10px;
+    z-index: -1;
+}
+
+.clair .background {
+    background: #91e7d4c5;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    border-radius: 10px;
+    z-index: -1;
+}
+
+.background-img {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    z-index: -2;
+    left: 0;
+    border-radius: 10px;
+}

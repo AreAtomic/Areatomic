@@ -5,15 +5,17 @@ import './global.sass'
 import React from 'react'
 import { Switch, Router, Route } from 'react-router-dom'
 
-import { createBrowserHistory } from 'history';
+import { createBrowserHistory } from 'history'
 
 // Composants
 import Navbar from './components/Navbar/Navbar'
 import Accueil from './components/Accueil/Accueil'
 import SliderSkill from './components/Slider/Slider.skills'
 import SliderTimeline from './components/Slider/Slider.timeline'
+import Portfolio from './components/Portfolio/Portfolio'
+import TrainPreddict from './components/Portfolio/TrainPreddict'
 
-const history = createBrowserHistory();
+const history = createBrowserHistory()
 
 const App = () => {
     return (
@@ -22,8 +24,14 @@ const App = () => {
             <Router history={history}>
                 <Switch>
                     <Route exact path="/" component={Accueil} />
-                    <Route exact path="/competences" component={SliderSkill}/>
-                    <Route exact path="/parcours" component={SliderTimeline}/>
+                    <Route exact path="/competences" component={SliderSkill} />
+                    <Route exact path="/parcours" component={SliderTimeline} />
+                    <Route exact path="/portfolio" component={Portfolio} />
+                    <Route
+                        exact
+                        path="/portfolio/trainpreddict"
+                        component={TrainPreddict}
+                    />
                 </Switch>
             </Router>
         </div>
