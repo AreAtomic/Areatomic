@@ -1,0 +1,21 @@
+.label {
+    color: #32d3b0;
+}
+
+.columns {
+    margin-bottom: 0 !important;
+}
+
+.field.column {
+    padding: 0 0.75rem;
+}
+button {
+    background: none;
+    display: grid;
+    border: none;
+    width: fit-content;
+    margin: 0 auto
+}
+.form{
+    padding: 20px 10px 10px !important;
+}

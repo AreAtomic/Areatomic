@@ -8,3 +8,12 @@
 .button.is-info {
     box-shadow: inset -4px -4px 4px rgba(0, 0, 0, 0.25), inset 4px 4px 4px rgba(239, 251, 248, 0.2);
 }
+
+.button.is-green {
+    background-color: #32D3B0;
+}
+
+.button.is-green {
+    box-shadow: inset -5px -5px 4px rgba(0, 0, 0, 0.1), inset 3px 3px 4px rgba(239, 251, 248, 0.4);
+    color: #EFFBF8
+}

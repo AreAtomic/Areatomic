@@ -8,6 +8,7 @@ import React, { useState } from 'react'
 import CardFoncee from '../Card/Card.foncee'
 import CardGreen from '../Card/Card.green'
 import CardWhite from '../Card/Card.white'
+import ButtonGreen from '../Button/Button.green'
 // Images
 import Node from '../../img/node.png'
 import Mongo from '../../img/leaf.png'
@@ -101,7 +102,9 @@ const SliderSkills = () => {
                         />
                     </button>
                 ) : (
-                    <a class="pagination-next" href='/parcours'>Mon parcours</a>
+                    <a class="pagination-next" href="/parcours">
+                        <ButtonGreen value="Parcours" />
+                    </a>
                 )}
             </nav>
         </div>

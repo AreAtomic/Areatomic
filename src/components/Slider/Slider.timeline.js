@@ -7,7 +7,7 @@ import React, { useState } from 'react'
 // Composants
 import CardFoncee from '../Card/Card.foncee'
 import CardGreen from '../Card/Card.green'
-import CardWhite from '../Card/Card.white'
+import ButtonGreen from '../Button/Button.green'
 // Images
 import Next from '../../img/Next.png'
 
@@ -98,7 +98,7 @@ const SliderTimeline = () => {
                     </button>
                 ) : (
                     <a class="pagination-next" href="/portfolio">
-                        Portfolio
+                        <ButtonGreen value="Portfolio"/>
                     </a>
                 )}
             </nav>

@@ -39,8 +39,12 @@ const CardGreen = (props) => {
         </div>
     ) : (
         <div className="container green">
-            <h2 className="has-text-centered">{props.title}</h2>
-            <h4 className="is-size-5 has-text-centered">{props.subtitle}</h4>
+            <div>
+                <h2 className="has-text-centered">{props.title}</h2>
+                <h4 className="is-size-5 has-text-centered">
+                    {props.subtitle}
+                </h4>
+            </div>
             {props.nom.map((item, i) => {
                 return (
                     <div className="columns is-mobile my-1 is-align-items-center">

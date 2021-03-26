@@ -2,11 +2,11 @@ import React, { useState } from 'react'
 
 import Next from '../../img/Next.png'
 
-const ImageSlider = () => {
+const ImageSlider = (props) => {
     const [index, setIndex] = useState(0)
 
     const next = () => {
-        if (index != 2) {
+        if (index != props.img.length - 1) {
             setIndex(index + 1)
         } else {
             setIndex(0)
@@ -17,23 +17,31 @@ const ImageSlider = () => {
         if (index != 0) {
             setIndex(index - 1)
         } else {
-            setIndex(2)
+            setIndex(props.img.length - 1)
         }
     }
+
+    console.log(props)
 
     return (
         <div className="container">
             <h1 className="has-text-centered my-2">Photos</h1>
             <div className="slider my-2">
-                <div className={`slide-item ${index == 0 ? 'active' : ''}`}>
-                    Image 1
-                </div>
-                <div className={`slide-item ${index == 1 ? 'active' : ''}`}>
-                    Image 2
-                </div>
-                <div className={`slide-item ${index == 2 ? 'active' : ''}`}>
-                    Image 3
-                </div>
+                {props.img.map((item, i) => {
+                    return (
+                        <div
+                            className={`slide-item ${
+                                index == i ? 'active' : ''
+                            }`}
+                        >
+                            <img
+                                src={item}
+                                alt="Projet développement Web, Aurélien Sèbe Castres"
+                                style={{ borderRadius: '10px' }}
+                            />
+                        </div>
+                    )
+                })}
             </div>
             <nav
                 class="pagination is-centered"
@@ -48,33 +56,19 @@ const ImageSlider = () => {
                     />
                 </button>
                 <ul class="pagination-list">
-                    <li>
-                        <a
-                            class={`pagination-link ${
-                                index == 0 ? 'is-current' : ''
-                            }`}
-                        >
-                            .
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            class={`pagination-link ${
-                                index == 1 ? 'is-current' : ''
-                            }`}
-                        >
-                            .
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            class={`pagination-link ${
-                                index == 2 ? 'is-current' : ''
-                            }`}
-                        >
-                            .
-                        </a>
-                    </li>
+                    {props.img.map((item, i) => {
+                        return (
+                            <li>
+                                <a
+                                    class={`pagination-link ${
+                                        index == i ? 'is-current' : ''
+                                    }`}
+                                >
+                                    .
+                                </a>
+                            </li>
+                        )
+                    })}
                 </ul>
                 <button class="pagination-next" onClick={next}>
                     <img

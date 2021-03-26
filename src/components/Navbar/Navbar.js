@@ -25,65 +25,87 @@ const Navbar = () => {
                     <Logo width={50} />
                 </a>
 
-                <div
+                <a
                     className="navbar-item"
                     style={{
                         display: `${largeur > 1023 ? 'none' : 'grid'}`,
                         alignItems: 'center',
                         margin: '0 auto',
                     }}
+                    href="/contact"
                 >
                     <ButtonDark value="Me contacter" />
-                </div>
+                </a>
 
                 <a
                     className="navbar-burger"
                     style={{
                         display: `${largeur > 1023 ? 'none' : 'grid'}`,
                         alignItems: 'center',
-                        marginLeft: '0'
+                        marginLeft: '0',
                     }}
                     onClick={activeMenu}
                 >
                     {active ? (
-                        <img
-                            src={close}
-                            alt="Menu"
-                            className="margin"
-                        />
+                        <img src={close} alt="Menu" className="margin" />
                     ) : (
-                        <img
-                            src={menu}
-                            alt="Menu"
-                            className="margin"
-                        />
+                        <img src={menu} alt="Menu" className="margin" />
                     )}
                 </a>
             </div>
 
             <div className={`navbar-menu ${active ? 'is-active' : ''}`}>
                 <div className="navbar-start">
-                    <a className="navbar-item">Accueil</a>
-
-                    <a className="navbar-item">Compétences</a>
+                    <a className="navbar-item" href="/competences">
+                        Compétences
+                    </a>
+                    <a className="navbar-item" href="/parcours">
+                        Parcours
+                    </a>
 
                     <div className="navbar-item has-dropdown is-hoverable">
                         <a className="navbar-link">Portfolio</a>
 
                         <div className="navbar-dropdown">
-                            <a className="navbar-item">TrainPreddict</a>
-                            <a className="navbar-item">Les arts en bois</a>
-                            <a className="navbar-item">Fabmusic</a>
-                            <a className="navbar-item">BlackPanther</a>
+                            <a className="navbar-item" href="/portfolio">
+                                Tous mes projets
+                            </a>
+                            <a
+                                className="navbar-item"
+                                href="/portfolio/trainpreddict"
+                            >
+                                TrainPreddict
+                            </a>
+                            <a
+                                className="navbar-item"
+                                href="/portfolio/lesartsenbois"
+                            >
+                                Les arts en bois
+                            </a>
+                            <a
+                                className="navbar-item"
+                                href="/portfolio/fabmusic"
+                            >
+                                Fab.Music
+                            </a>
+                            <a
+                                className="navbar-item"
+                                href="/portfolio/blackpanther"
+                            >
+                                Black Panther
+                            </a>
+                            <a className="navbar-item" href="/portfolio/pfp">
+                                Pauline Ferrand Prévot
+                            </a>
                         </div>
                     </div>
                 </div>
 
                 <div className="navbar-end">
                     <div className="navbar-item">
-                        <div className="buttons">
+                        <a className="buttons" href="/contact">
                             <ButtonDark value="Me contacter" />
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>

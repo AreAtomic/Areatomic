@@ -1,59 +1,50 @@
 import React from 'react'
 import ButtonDarks from '../Button/Button.dark'
 import ImageSlider from './ImageSlider'
-import Trainpreddict from '../../img/TrainPreddict.jpg'
-import Trainpreddict2 from '../../img/TP2.jpg'
-import Trainpreddict3 from '../../img/TP3.jpg'
-import Trainpreddict4 from '../../img/TP4.jpg'
+import FM from '../../img/fabmusic.jpg'
+import FM2 from '../../img/fabm2.jpg'
+import FM3 from '../../img/fabm3.jpg'
 import ButtonGreen from '../Button/Button.green'
 
-const TrainPreddict = () => {
+const FabMusic = () => {
     return (
         <div className="container">
-            <h1 className="has-text-centered my-3">TrainPreddict</h1>
-            <div className="container foncee">
+            <h1 className="has-text-centered my-3">Fab.Music</h1>
+            <div className="container white">
                 <div>
-                    <h2 className="has-text-centered">Application Web</h2>
+                    <h2 className="has-text-centered">Joueur de musique</h2>
                     <h4 className="is-size-5 has-text-centered">
-                        Pour les cyclistes
+                        Piano virtuel
                     </h4>
                 </div>
                 <div className="column is-mobile my-1 is-align-items-center">
                     <p className="is-success has-text-centered">Idée</p>
                     <p className="my-2 has-text-left">
-                        Une application pour cycliste permettant de générer un
-                        plan d’entrainement personnalisé et d’avoir un suivi
-                        personnalisé
+                        Un site qui permet de jouer quelques notes de musique et
+                        de jouer des animations en même temps.
                     </p>
                     <p className="my-2 is-success has-text-centered">
                         Technologie
                     </p>
-                    <p className=" my-2has-text-left">
-                        Mongo DB, Express JS, React JS, Node JS
-                    </p>
+                    <p className=" my-2has-text-left">HTML, CSS, Javascript</p>
                     <p className="my-2 is-success has-text-centered">
                         Compétences mise en oeuvre
                     </p>
                     <p className="my-2 has-text-left">
-                        UX/UI Design, modélisation de donné et Intelligence
-                        artificielle
+                        Gestion de son, Animation, et Design
                     </p>
                 </div>
-                <a href="http://trainpreddict.fr" style={{ display: 'grid' }}>
-                    <ButtonGreen
+                <a
+                    href="http://fab-music.porfolio.aureliensebe.com/"
+                    style={{ display: 'grid' }}
+                >
+                    <ButtonDarks
                         value="Découvrir"
                         style={{ color: '#EFFBF8' }}
                     />
                 </a>
             </div>
-            <ImageSlider
-                img={[
-                    Trainpreddict,
-                    Trainpreddict2,
-                    Trainpreddict3,
-                    Trainpreddict4,
-                ]}
-            />
+            <ImageSlider img={[FM, FM2, FM3]} />
             <a href="/portfolio" style={{ display: 'grid' }} className="my-3">
                 <ButtonDarks value="Portfolio" />
             </a>
@@ -61,4 +52,4 @@ const TrainPreddict = () => {
     )
 }
 
-export default TrainPreddict
+export default FabMusic

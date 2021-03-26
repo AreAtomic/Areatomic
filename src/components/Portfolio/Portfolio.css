@@ -13,7 +13,8 @@
     color: #EFFBF8;
 }
 
-.square.green h3, .square.clair h3 {
+.square.green h3,
+.square.clair h3 {
     color: #1A535C;
     font-weight: bold;
 }
@@ -68,4 +69,21 @@
     z-index: -2;
     left: 0;
     border-radius: 10px;
+}
+
+.pagination-link {
+    min-width: 15px;
+    color: transparent;
+    height: 20px;
+    width: 15px;
+    background-color: #32d3b0;
+    border-radius: 50%;
+}
+
+.pagination-link.is-current {
+    background-color: #1A535C;
+    color: transparent;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
 }

@@ -39,7 +39,7 @@ const Accueil = (props) => {
                 </div>
                 <h3 className="has-text-centered write">{text}</h3>
                 <div className="columns is-mobile mt-6">
-                    <div className="column">
+                    <a className="column" href="https://github.com/AreAtomic" target="_blank">
                         <div style={{ display: 'grid' }}>
                             <img
                                 src={github}
@@ -48,8 +48,8 @@ const Accueil = (props) => {
                             />
                         </div>
                         <h5 className="has-text-centered">Areatomic</h5>
-                    </div>
-                    <a className="column">
+                    </a>
+                    <a className="column" href="https://www.linkedin.com/in/aur%C3%A9lien-s%C3%A8be-98256b176/" target="_blank">
                         <div style={{ display: 'grid' }}>
                             <img
                                 src={linkedin}
@@ -61,7 +61,7 @@ const Accueil = (props) => {
                     </a>
                 </div>
                 <div className="columns is-mobile mt-1">
-                    <a className="column is-offset-one-third is-one-third">
+                    <a className="column is-offset-one-third is-one-third" href="http://trainpreddict.fr" target="_blank">
                         <div style={{ display: 'grid' }}>
                             <img
                                 src={trainpreddict}

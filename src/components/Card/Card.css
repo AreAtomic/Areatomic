@@ -1,5 +1,8 @@
 .container {
     width: 80vw;
+    max-width: 800px !important;
+    align-items: center;
+    display: grid;
 }
 
 .container.foncee {
@@ -8,10 +11,15 @@
     padding: 10px;
     border-radius: 10px;
     height: 68.5vh;
+    max-width: 400px !important;
 }
 
 .container.foncee .is-success {
     color: #32D3B0;
+}
+
+.container.white p {
+    color: #303541b8;
 }
 
 
@@ -21,9 +29,10 @@
     padding: 10px;
     border-radius: 10px;
     height: 68.5vh;
+    max-width: 400px !important;
 }
 
-.container.green .is-success {
+.container.green .is-success, .container.white .is-success {
     color: #1A535C;
 }
 
@@ -33,6 +42,7 @@
     padding: 10px;
     border-radius: 10px;
     height: 68.5vh;
+    max-width: 400px !important;
 }
 
 .percent {

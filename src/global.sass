@@ -43,9 +43,9 @@ $navbar-height: 4.25rem
 $navbar-item-img-max-height: 3rem
 
 // Import only what you need from Bulma
-@import "../node_modules/bulma/bulma.sass";
-@import url('https://fonts.googleapis.com/css2?family=Karla&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+@import "../node_modules/bulma/bulma.sass"
+@import url('https://fonts.googleapis.com/css2?family=Karla&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap')
 
 html,
 body
@@ -53,6 +53,8 @@ body
     margin: 0
     font-family: 'Karla', sans-serif
     overflow-x: hidden
+    scrollbar-color: $green-dark-light $white
+    scrollbar-width: thin
 
 a
     color: inherit
@@ -74,3 +76,17 @@ h3
 
 h1, h2, h3, h4, h5, h6 
     font-family: 'Rubik', sans-serif
+
+::-webkit-scrollbar, scrollbar
+  width: 10px
+  
+::-webkit-scrollbar-track, scrollbar-track 
+  box-shadow: inset 0 0 5px grey 
+  border-radius: 5px  
+            
+::-webkit-scrollbar-thumb, scrollbar-thumb 
+  background: $green-dark-light 
+  border-radius: 5px
+
+::-webkit-scrollbar-thumb:hover, scrollbar-thumb:hover 
+  background: $green-dark 

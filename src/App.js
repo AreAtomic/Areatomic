@@ -14,6 +14,12 @@ import SliderSkill from './components/Slider/Slider.skills'
 import SliderTimeline from './components/Slider/Slider.timeline'
 import Portfolio from './components/Portfolio/Portfolio'
 import TrainPreddict from './components/Portfolio/TrainPreddict'
+import LesArtsEnBois from './components/Portfolio/LesArtsEnBois'
+import FabMusic from './components/Portfolio/FabMusic'
+import PaulineFP from './components/Portfolio/PFP'
+import BlackPanther from './components/Portfolio/BlackPanther'
+import Contact from './components/Contact/Contact'
+import Footer from './components/Footer/Footer'
 
 const history = createBrowserHistory()
 
@@ -32,8 +38,26 @@ const App = () => {
                         path="/portfolio/trainpreddict"
                         component={TrainPreddict}
                     />
+                    <Route
+                        exact
+                        path="/portfolio/lesartsenbois"
+                        component={LesArtsEnBois}
+                    />
+                    <Route
+                        exact
+                        path="/portfolio/fabmusic"
+                        component={FabMusic}
+                    />
+                    <Route
+                        exact
+                        path="/portfolio/blackpanther"
+                        component={BlackPanther}
+                    />
+                    <Route exact path="/portfolio/pfp" component={PaulineFP} />
+                    <Route exact path="/contact" component={Contact} />
                 </Switch>
             </Router>
+            <Footer />
         </div>
     )
 }

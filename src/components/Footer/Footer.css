@@ -1,0 +1,20 @@
+.notification {
+    background-color: #EFFBF8;
+    color: #303541
+}
+
+.notification h1 {
+    text-align: center;
+}
+
+.footer {
+    background: #1A535C;
+    color: #EFFBF8;
+    text-align: center;
+    padding: 2rem 1.5rem 2rem;
+    margin-top: 2rem;
+}
+
+.footer a {
+    color: #32D3B0
+}

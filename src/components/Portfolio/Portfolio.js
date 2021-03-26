@@ -15,7 +15,7 @@ import Mail from '../../img/Mail.jpg'
 
 const Portfolio = () => {
     return (
-        <div className="column is-mobile mt-1 has-text-centered">
+        <div className="container is-mobile mt-1 has-text-centered">
             <h1>Portfolio</h1>
             <Square
                 color="foncee"
@@ -26,7 +26,7 @@ const Portfolio = () => {
             />
             <Square
                 color="green"
-                lien="lesartenbois"
+                lien="lesartsenbois"
                 img={LesArtsEnBois}
                 title="Les Arts en Bois"
                 description="Artisane ébéniste"
@@ -51,13 +51,6 @@ const Portfolio = () => {
                 img={PFP}
                 title="Pauline Ferrand Prévot"
                 description="Sitre de présentation"
-            />
-            <Square
-                color="clair"
-                lien="email"
-                img={Mail}
-                title="Design email"
-                description="UX/UI Design"
             />
         </div>
     )
