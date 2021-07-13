@@ -76,7 +76,7 @@ const Contact = () => {
                     <input
                         type="text"
                         required={true}
-                        placeHolder="contact@aureliensebe.com"
+                        placeHolder="contact@aureliensebe.fr"
                         name="reply_to"
                         className="input"
                     />

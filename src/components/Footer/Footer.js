@@ -12,10 +12,10 @@ const Footer = () => {
                 <div className="column has-text-centered">
                     <h4 className="has-text-centered">Adresse mail</h4>
                     <a
-                        href="mailto:contact@aureliensebe.com"
+                        href="mailto:contact@aureliensebe.fr"
                         className="has-text-centered"
                     >
-                        contact@aureliensebe.com
+                        contact@aureliensebe.fr
                     </a>
                 </div>
                 <div className="column">
@@ -45,7 +45,7 @@ const Footer = () => {
                             <h3 className="my-3">Editeur du site</h3>
                             <div class="coordonnees vcard">
                                 <p>
-                                    <a href="https://aureliensebe.com/">
+                                    <a href="https://aureliensebe.fr/">
                                         <strong>
                                             Aurélien Sèbe - Développeur
                                             Informatique
@@ -53,7 +53,7 @@ const Footer = () => {
                                     </a>
                                     <br />
                                     par{' '}
-                                    <a href="http://www.aureliensebe.com/">
+                                    <a href="http://www.aureliensebe.fr/">
                                         Aurélien Sèbe
                                     </a>
                                     <br />
@@ -71,16 +71,16 @@ const Footer = () => {
                                     <br />
                                     <a
                                         title="Nouvelle fenetre"
-                                        href="https://www.aureliensebe.com"
+                                        href="https://www.aureliensebe.fr"
                                         target="_blank"
                                         rel="noopener"
                                     >
-                                        https://www.aureliensebe.com
+                                        https://www.aureliensebe.fr
                                     </a>
                                     <br />
                                     <a
                                         title="Agence web Bordeaux et Gironde"
-                                        href="https://www.aureliensebe.com/"
+                                        href="https://www.aureliensebe.fr/"
                                         target="_blank"
                                         rel="noopener"
                                     >
@@ -95,10 +95,10 @@ const Footer = () => {
                             </div>
                             <h3 className="my-3">Conditions d'utilisation</h3>
                             Le site accessible par les url suivants :
-                            www.aureliensebe.com est exploité dans le respect de
+                            www.aureliensebe.fr est exploité dans le respect de
                             la législation française. L'utilisation de ce site
                             est régie par les présentes conditions générales.{' '}
-                            <a href="https://www.aureliensebe.com">&nbsp;</a> En
+                            <a href="https://www.aureliensebe.fr">&nbsp;</a> En
                             utilisant le site, vous reconnaissez avoir pris
                             connaissance de ces conditions et les avoir
                             acceptées. Celles-ci pourront êtres modifiées à tout
@@ -107,7 +107,7 @@ const Footer = () => {
                             Aurélien Sèbe ne saurait être tenu pour responsable
                             en aucune manière d’une mauvaise utilisation du
                             service.
-                            <a href="https://www.aureliensebe.com">&nbsp;</a>
+                            <a href="https://www.aureliensebe.fr">&nbsp;</a>
                             <h3 className="my-3">Responsable éditorial</h3>
                             <div class="coordonnees vcard">
                                 <p>
@@ -134,11 +134,11 @@ const Footer = () => {
                                     <a
                                         class="org url"
                                         title="Développeur Informatique MERN"
-                                        href="https://www.aureliensebe.com"
+                                        href="https://www.aureliensebe.fr"
                                         target="_blank"
                                         rel="noopener"
                                     >
-                                        http://www.aureliensebe.com
+                                        http://www.aureliensebe.fr
                                     </a>
                                 </p>
                             </div>
@@ -166,13 +166,13 @@ const Footer = () => {
                                 dommage subi par l'ordinateur de l'utilisateur
                                 ou d'une quelconque perte de données
                                 consécutives au téléchargement.
-                                <a href="https://www.aureliensebe.com/">
+                                <a href="https://www.aureliensebe.fr/">
                                     &nbsp;
                                 </a>{' '}
-                                <a href="https://www.aureliensebe.com">
+                                <a href="https://www.aureliensebe.fr">
                                     &nbsp;
                                 </a>{' '}
-                                <a href="http://www.aureliensebe.com/">
+                                <a href="http://www.aureliensebe.fr/">
                                     &nbsp;
                                 </a>
                                 <br />
@@ -192,7 +192,7 @@ const Footer = () => {
                             pourraient naître de l'interprétation ou de
                             l'exécution de celles-ci seront de la compétence
                             exclusive des tribunaux dont dépend le{' '}
-                            <a href="https://www.aureliensebe.com">
+                            <a href="https://www.aureliensebe.fr">
                                 &nbsp;
                             </a>{' '}
                             siège social de la société Aurélien Sèbe. La langue
@@ -223,8 +223,8 @@ const Footer = () => {
                             peut être exercé par voie postale auprès de Natural
                             net 49, Boulevard Antoine Gautier 33000 Bordeaux ou
                             par voie électronique à l’adresse email suivante :{' '}
-                            <a href="mailto:contact@aureliensebe.com">
-                                contact@aureliensebe.com
+                            <a href="mailto:contact@aureliensebe.fr">
+                                contact@aureliensebe.fr
                             </a>
                             .<br />
                             Les informations personnelles collectées ne sont en
@@ -266,7 +266,7 @@ const Footer = () => {
                                 "droits des producteurs de bases de données"
                                 visés au Livre III, Titre IV, du Code de la
                                 Propriété Intellectuelle{' '}
-                                <a href="https://www.aureliensebe.com">
+                                <a href="https://www.aureliensebe.fr">
                                     &nbsp;
                                 </a>{' '}
                                 (loi n° 98-536 du 1er juillet 1998) relative aux
@@ -276,7 +276,7 @@ const Footer = () => {
                                 peuvent mettre en place un hyperlien en
                                 direction de ce site, mais uniquement en
                                 direction de la page d’accueil, accessible à
-                                l’URL suivante : www.aureliensebe.com, à
+                                l’URL suivante : www.aureliensebe.fr, à
                                 condition que ce lien s’ouvre dans une nouvelle
                                 fenêtre. En particulier un lien vers une sous
                                 page (« lien profond ») est interdit, ainsi que
@@ -288,8 +288,8 @@ const Footer = () => {
                                 Pour toute demande d'autorisation ou
                                 d'information, veuillez nous contacter par email
                                 :{' '}
-                                <a href="mailto:contact@aureliensebe.com">
-                                    contact@aureliensebe.com
+                                <a href="mailto:contact@aureliensebe.fr">
+                                    contact@aureliensebe.fr
                                 </a>
                                 . Des conditions spécifiques sont prévues pour
                                 la presse.
@@ -324,7 +324,7 @@ const Footer = () => {
                             signaler toutes modifications du site qu'il jugerait
                             utile. Aurélien Sèbe n'est en aucun cas responsable
                             de l'utilisation faite de ces informations,{' '}
-                            <a href="https://www.aureliensebe.com">&nbsp;</a> et
+                            <a href="https://www.aureliensebe.fr">&nbsp;</a> et
                             de tout préjudice direct ou indirect pouvant en
                             découler.
                             <h3 className="my-3">Cookies</h3>
@@ -340,7 +340,7 @@ const Footer = () => {
                             ressources disponibles sur Internet.
                             <a
                                 title="Développeur "
-                                href="https://www.aureliensebe.com"
+                                href="https://www.aureliensebe.fr"
                                 target="_blank"
                                 rel="noopener"
                             >
@@ -389,7 +389,7 @@ const Footer = () => {
                             que ce que vous choisissez d'utiliser ne soit pas
                             entaché d'erreurs voire d'éléments de nature
                             destructrice tels que virus, trojans, etc....{' '}
-                            <a href="https://www.aureliensebe.com">&nbsp;</a>
+                            <a href="https://www.aureliensebe.fr">&nbsp;</a>
                             <h3 className="my-3">Responsabilité</h3>
                             Aucune autre garantie n'est accordée au client,
                             auquel incombe l'obligation de formuler clairement
@@ -402,22 +402,22 @@ const Footer = () => {
                             des tiers de l'utilisation par le client des
                             informations ou de leur absence contenues dans ses
                             produits y compris un de ses sites Internet.
-                            <a href="https://www.aureliensebe.com/">
+                            <a href="https://www.aureliensebe.fr/">
                                 &nbsp;
                             </a>{' '}
-                            <a href="http://www.aureliensebe.com/">&nbsp;</a>
+                            <a href="http://www.aureliensebe.fr/">&nbsp;</a>
                             <h3 className="my-3">Contactez-moi</h3>
                             Aurélien Sèbe est à votre disposition pour tous vos
                             commentaires ou suggestions. Vous pouvez nous écrire
                             en français par courrier électronique à :{' '}
-                            <a href="mailto:contact@aureliensebe.com">
-                                contact@aureliensebe.com
+                            <a href="mailto:contact@aureliensebe.fr">
+                                contact@aureliensebe.fr
                             </a>
                             .<br />
-                            <a href="https://www.aureliensebe.com/">
+                            <a href="https://www.aureliensebe.fr/">
                                 &nbsp;
                             </a>{' '}
-                            <a href="http://www.aureliensebe.com/">&nbsp;</a>
+                            <a href="http://www.aureliensebe.fr/">&nbsp;</a>
                             <p></p>
                         </div>
                     </div>
