@@ -34,15 +34,6 @@ const FabMusic = () => {
                         Gestion de son, Animation, et Design
                     </p>
                 </div>
-                <a
-                    href="http://fab-music.porfolio.aureliensebe.com/"
-                    style={{ display: 'grid' }}
-                >
-                    <ButtonDarks
-                        value="Découvrir"
-                        style={{ color: '#EFFBF8' }}
-                    />
-                </a>
             </div>
             <ImageSlider img={[FM, FM2, FM3]} />
             <a href="/portfolio" style={{ display: 'grid' }} className="my-3">

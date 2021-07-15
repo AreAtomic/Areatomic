@@ -34,15 +34,6 @@ const BlackPanther = () => {
                         UX/UI Design, Animation,
                     </p>
                 </div>
-                <a
-                    href="http://blackpanther.aureliensebe.com"
-                    style={{ display: 'grid' }}
-                >
-                    <ButtonGreen
-                        value="Découvrir"
-                        style={{ color: '#EFFBF8' }}
-                    />
-                </a>
             </div>
             <ImageSlider img={[BP, BP2, BP3]} />
             <a href="/portfolio" style={{ display: 'grid' }} className="my-3">
