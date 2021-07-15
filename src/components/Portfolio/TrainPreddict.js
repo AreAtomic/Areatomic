@@ -39,7 +39,7 @@ const TrainPreddict = () => {
                         artificielle
                     </p>
                 </div>
-                <a href="http://trainpreddict.fr" style={{ display: 'grid' }}>
+                <a href="https://trainpreddict.fr" style={{ display: 'grid' }}>
                     <ButtonGreen
                         value="Découvrir"
                         style={{ color: '#EFFBF8' }}

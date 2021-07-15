@@ -36,16 +36,6 @@ const PaulineFP = () => {
                         UX/UI Design, Dessin
                     </p>
                 </div>
-                <a
-                    href="http://pfp.aureliensebe.com"
-                    target="_blank"
-                    style={{ display: 'grid' }}
-                >
-                    <ButtonDarks
-                        value="Découvrir"
-                        style={{ color: '#EFFBF8' }}
-                    />
-                </a>
             </div>
             <ImageSlider img={[PFP, PFP2]} />
             <a href="/portfolio" style={{ display: 'grid' }} className="my-3">

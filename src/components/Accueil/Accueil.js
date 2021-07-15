@@ -71,7 +71,7 @@ const Accueil = (props) => {
                 <div className="columns mx-auto is-mobile mt-1">
                     <a
                         className="column"
-                        href="http://trainpreddict.fr"
+                        href="https://trainpreddict.fr"
                         target="_blank"
                     >
                         <div style={{ display: 'grid' }}>
