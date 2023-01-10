@@ -32,9 +32,12 @@ Builds the app for production to the `build` folder. It correctly bundles React 
     "prettier": "^2.7.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-icons": "^4.7.1",
     "react-router-dom": "^6.2.2",
     "react-router-hash-link": "2.4.3",
     "react-scripts": "5.0.0",
+    "slate-history": "^0.86.0",
+    "slate-react": "^0.88.0",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17",
     "web-vitals": "^1.1.2"
 }

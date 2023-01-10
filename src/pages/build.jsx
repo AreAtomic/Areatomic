@@ -6,6 +6,7 @@ import {
     HeadingOne,
 } from '../components/atoms'
 import image from '../assets/image-product.png'
+import { Editor } from '../components/organisms'
 
 const Build = () => {
     return (
@@ -27,6 +28,7 @@ const Build = () => {
                 image={image}
                 alt="Template React & Tailwind by Areatomic"
             />
+            <Editor />
         </div>
     )
 }
