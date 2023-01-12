@@ -19,7 +19,7 @@ const Toolbar = () => {
     const editor = useSlate()
     const isTable = useTable(editor)
     const [toolbarGroups, setToolbarGroups] = useState(defaultToolbarGroups)
-    
+
     useEffect(() => {
         let filteredGroups = [...defaultToolbarGroups]
         if (isTable) {
@@ -31,7 +31,7 @@ const Toolbar = () => {
         setToolbarGroups(filteredGroups)
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [isTable])
-    
+
     const BlockButton = ({ format }) => {
         return (
             <Button
@@ -47,7 +47,7 @@ const Toolbar = () => {
             </Button>
         )
     }
-    
+
     const MarkButton = ({ format }) => {
         return (
             <Button
@@ -62,7 +62,7 @@ const Toolbar = () => {
             </Button>
         )
     }
-    
+
     const Dropdown = ({ format, options }) => {
         return (
             <select
@@ -78,7 +78,7 @@ const Toolbar = () => {
             </select>
         )
     }
-    
+
     const changeMarkData = (event, format) => {
         event.preventDefault()
         const value = event.target.value

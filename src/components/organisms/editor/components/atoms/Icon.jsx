@@ -16,7 +16,7 @@ import {
     MdAdd,
 } from 'react-icons/md'
 import { BsTypeH1, BsTypeH2, BsTypeH3 } from 'react-icons/bs'
-import { FaSuperscript, FaSubscript } from 'react-icons/fa'
+import { FaSuperscript, FaSubscript, FaRegFileCode } from 'react-icons/fa'
 import {
     AiOutlineTable,
     AiOutlineInsertRowBelow,
@@ -34,7 +34,6 @@ const iconList = {
     headingOne: <BsTypeH1 size={20} color={iconColor} />,
     headingTwo: <BsTypeH2 size={20} color={iconColor} />,
     headingThree: <BsTypeH3 size={20} color={iconColor} />,
-
     blockquote: <MdFormatQuote size={20} color={iconColor} />,
     superscript: <FaSuperscript size={15} color={iconColor} />,
     subscript: <FaSubscript size={15} color={iconColor} />,
@@ -51,6 +50,7 @@ const iconList = {
     row: <AiOutlineInsertRowBelow size={20} color={iconColor} />,
     column: <AiOutlineInsertRowRight size={20} color={iconColor} />,
     removeTable: <AiOutlineDelete size={20} color={iconColor} />,
+    code: <FaRegFileCode size={20} color={iconColor} />,
 }
 
 const Icon = (props) => {

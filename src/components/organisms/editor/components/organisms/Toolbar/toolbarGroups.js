@@ -90,6 +90,7 @@ const toolbarGroups = [
             format: 'link',
             type: 'link',
         },
+        { id: 16, format: 'code', type: 'mark' },
     ],
 ]
 

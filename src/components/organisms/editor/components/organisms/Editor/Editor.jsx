@@ -102,7 +102,7 @@ const Leaf = ({ attributes, children, leaf }) => {
     }
 
     if (leaf.code) {
-        children = <code>{children}</code>
+        children = <code className='bg-purple-areatomic-900 rounded-md text-blue-areatomic-100 p-2'>{children}</code>
     }
 
     if (leaf.italic) {
