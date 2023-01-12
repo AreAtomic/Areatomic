@@ -91,7 +91,7 @@ const Home = (props) => {
                     <div className="w-3/4">
                         <div className="mb-10" />
                         <HeadingOne>
-                            Areatomic rend votre business <b>atomique</b>
+                            Areatomic met votre business en <b>orbite</b>
                         </HeadingOne>
                         <div className="mb-6" />
                         <div className="py-5">
@@ -103,7 +103,7 @@ const Home = (props) => {
                             >
                                 <CardWithoutImage
                                     heading="Site sur mesure"
-                                    text="Création de site vitrine et de site e-commerce 100% personnalisé pour vous permettre de faiore décoller votre business."
+                                    text="Création de site vitrine et de site e-commerce 100% personnalisé pour vous permettre de faire décoller votre business."
                                 />
                             </HashLink>
                         </div>
