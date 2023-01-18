@@ -129,7 +129,7 @@ const EditArticle = () => {
                 <ButtonPrimary
                     onClick={() => {
                         if (articleContext.id)
-                            articleContext.editArticle('draft')
+                            articleContext.editArticle(status[articleContext.status].name)
                         else articleContext.createArticle()
                     }}
                 >

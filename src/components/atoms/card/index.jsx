@@ -75,15 +75,14 @@ export const CardArticle = ({
         <div className="xs:w-screen md:w-card-article bg-component-500 rounded px-4 py-7">
             <HeadingTwo color="text-blue-areatomic-500">{heading}</HeadingTwo>
             <div className="mb-2"></div>
-            <Image
-                id={image}
-                url={false}
-            />
+            <div className="h-40">
+                <Image id={image} url={false} width="300px" height="150px" className="mx-auto rounded-md" />
+            </div>
             <div className="mb-2"></div>
             <HeadingTwo color="text-blue-areatomic-500">{title}</HeadingTwo>
             <div className="mb-2"></div>
             <p className="text-white-areatomic-500 text-[17px]">{text}</p>
-            <div className="mb-10"></div>
+            <div className="mb-2"></div>
             <div className="grid grid-cols-2 justify-items-start">
                 <ButtonSecondary
                     className="mx-0 mt-4 items-center justify-center"

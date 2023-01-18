@@ -4,7 +4,7 @@ import { useUx } from './ux.context'
 
 const ImageContext = createContext({
     defaultUrl: 'https://ik.imagekit.io/34fxnq3hl/default.png',
-    getImageWithId: (value) => {},
+    getImageWithId: async (value) => {},
     uploadImage: (file) => {},
 })
 

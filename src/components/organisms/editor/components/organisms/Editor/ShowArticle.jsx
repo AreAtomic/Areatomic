@@ -19,19 +19,19 @@ const Element = (props) => {
     switch (element.type) {
         case 'headingOne':
             return (
-                <h1 {...attributes} className="text-3xl font-bold">
+                <h1 {...attributes} className="text-3xl font-bold mt-2 mb-4">
                     {children}
                 </h1>
             )
         case 'headingTwo':
             return (
-                <h2 {...attributes} className="text-xl font-bold">
+                <h2 {...attributes} className="text-xl font-bold mt-5 mb-1">
                     {children}
                 </h2>
             )
         case 'headingThree':
             return (
-                <h3 {...attributes} className="text-lg font-semibold">
+                <h3 {...attributes} className="text-lg font-semibold mt-3">
                     {children}
                 </h3>
             )

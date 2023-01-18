@@ -3,7 +3,7 @@ export const proxy = process.env.REACT_APP_PROXY
 export const url = `${proxy}/api/v1`
 
 export const request = async (method, path, body, token, contentType) => {
-    console.log(contentType)
+
     const config = {
         method: method,
         url: `${url}/${path}`,
@@ -19,7 +19,7 @@ export const request = async (method, path, body, token, contentType) => {
         data: body,
     }
 
-    console.log(config)
+    // console.log(config)
     return await axios(config)
         .then((response) => {
             // console.log('Axios response :', response)

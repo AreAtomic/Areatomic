@@ -43,17 +43,14 @@ const ImageUpload = ({ setValue }) => {
     )
 }
 
-const Image = ({ id, url, className }) => {
+const Image = ({ id, url, className, width, height }) => {
     const imageContext = useImage()
     const [value, setValue] = useState(imageContext.defaultUrl)
-    const width = window.innerHeight / 2.05
 
     useEffect(() => {
         const fetchImage = async () => {
-            console.log(id)
             const response = await imageContext.getImageWithId(id)
             setValue(response.url)
-            console.log(response)
         }
 
         if (!url) {
@@ -68,7 +65,9 @@ const Image = ({ id, url, className }) => {
             src={value}
             alt="Areatomic image personnalisé"
             className={className}
-            width={`${width}px`}
+            width={width}
+            height={height}
+            style={{ maxWidth: width, height: height }}
         />
     )
 }
