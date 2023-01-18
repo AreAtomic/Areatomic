@@ -1,7 +1,14 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
-import { Build, Home, Services, Register, Login } from './pages'
-import { useUx, AuthContextProvider, useAuth } from './contexts'
+import { Build, Home, Services, Register, Login, Articles } from './pages'
+import {
+    useUx,
+    AuthContextProvider,
+    useAuth,
+    ArticleContextProvider,
+    ImageContextProvider,
+} from './contexts'
+import './themes/index.css'
 
 const Router = () => {
     const uxContext = useUx()
@@ -49,6 +56,7 @@ const Router = () => {
                 <Route path="/register" element={<Register />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/build" element={<Build />} />
+                <Route path="/articles" element={<Articles />} />
             </Routes>
         </div>
     )
@@ -57,7 +65,11 @@ const Router = () => {
 const App = () => {
     return (
         <AuthContextProvider>
-            <Router />
+            <ArticleContextProvider>
+                <ImageContextProvider>
+                    <Router />
+                </ImageContextProvider>
+            </ArticleContextProvider>
         </AuthContextProvider>
     )
 }

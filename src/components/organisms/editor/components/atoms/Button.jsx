@@ -4,7 +4,7 @@ const Button = (props) => {
     const { children, format, active, ...rest } = props
     return (
         <button
-            className={active ? 'btnActive' : 'lol'}
+            className={`rounded p-1 ${active ? 'bg-blue-areatomic-500' : ''}`}
             title={format}
             {...rest}
         >

@@ -86,21 +86,28 @@ const Toolbar = () => {
     }
 
     return (
-        <div className="z-[10] relative rounded-sm bg-component-one-500 drop-shadow flex items-center py-3">
+        <div className="z-[10] relative rounded-sm bg-white-areatomic-500 drop-shadow flex items-center py-3 overflow-x-scroll">
             {toolbarGroups.map((group, index) => (
                 <span key={index} className="flex">
                     {group.map((element) => {
                         switch (element.type) {
                             case 'block':
                                 return (
-                                    <BlockButton
-                                        key={element.id}
-                                        {...element}
-                                    />
+                                    <div className="px-1">
+                                        <BlockButton
+                                            key={element.id}
+                                            {...element}
+                                        />
+                                    </div>
                                 )
                             case 'mark':
                                 return (
-                                    <MarkButton key={element.id} {...element} />
+                                    <div className="px-1">
+                                        <MarkButton
+                                            key={element.id}
+                                            {...element}
+                                        />
+                                    </div>
                                 )
                             case 'dropdown':
                                 return (
@@ -108,11 +115,16 @@ const Toolbar = () => {
                                 )
                             case 'link':
                                 return (
-                                    <LinkButton
-                                        key={element.id}
-                                        active={isBlockActive(editor, 'link')}
-                                        editor={editor}
-                                    />
+                                    <div className="px-1">
+                                        <LinkButton
+                                            key={element.id}
+                                            active={isBlockActive(
+                                                editor,
+                                                'link'
+                                            )}
+                                            editor={editor}
+                                        />
+                                    </div>
                                 )
                             case 'embed':
                                 return (

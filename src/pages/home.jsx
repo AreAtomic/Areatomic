@@ -91,7 +91,7 @@ const Home = (props) => {
                     <div className="w-3/4">
                         <div className="mb-10" />
                         <HeadingOne>
-                            Areatomic met votre business <b>orbite</b>
+                            Areatomic met votre business en <b>orbite</b>
                         </HeadingOne>
                         <div className="mb-6" />
                         <div className="py-5">

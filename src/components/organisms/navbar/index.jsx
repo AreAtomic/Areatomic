@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Links, LienLogo, Button } from './components'
 
-export const Navbar = (props) => {
+export const Navbar = () => {
     const [active, setActive] = useState(false)
     const [closed, setClosed] = useState(true)
     const [background, setBackground] = useState(false)
@@ -37,7 +37,7 @@ export const Navbar = (props) => {
                     background
                         ? 'lg:bg-blue-areatomic-200'
                         : 'lg:bg-transparent'
-                } fixed w-full z-40`}
+                } fixed w-screen z-40`}
             >
                 <LienLogo />
                 <div className="hidden lg:flex mx-2">

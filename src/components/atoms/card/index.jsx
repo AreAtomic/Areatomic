@@ -1,6 +1,9 @@
 import { ButtonPrimary, ButtonSecondary } from '../buttons'
+import { Image } from '../../organisms/image'
 import { HeadingTwo } from '../headings'
 import arrow from '../../../assets/arrow-right.svg'
+import { useAuth } from '../../../contexts'
+import { useNavigate } from 'react-router-dom'
 
 // TODO: icon "->" sur bouton "Voir plus"
 
@@ -56,33 +59,54 @@ export const CardProduct = (props) => {
     )
 }
 
-export const CardArticle = (props) => {
+export const CardArticle = ({
+    heading,
+    image,
+    alt,
+    title,
+    text,
+    edit,
+    read,
+    more,
+}) => {
+    const authContext = useAuth()
+    const navigate = useNavigate()
     return (
-        <div className="w-card-article bg-component-500 rounded px-4 py-7">
-            <HeadingTwo color="text-blue-areatomic-500">
-                {props.heading}
-            </HeadingTwo>
+        <div className="xs:w-screen md:w-card-article bg-component-500 rounded px-4 py-7">
+            <HeadingTwo color="text-blue-areatomic-500">{heading}</HeadingTwo>
             <div className="mb-2"></div>
-            <img src={props.image} alt={props.alt} className="rounded-md" />
+            <Image
+                id={image}
+                url={false}
+            />
             <div className="mb-2"></div>
-            <HeadingTwo color="text-blue-areatomic-500">
-                {props.title}
-            </HeadingTwo>
+            <HeadingTwo color="text-blue-areatomic-500">{title}</HeadingTwo>
             <div className="mb-2"></div>
-            <p className="text-white-areatomic-500 text-[17px]">{props.text}</p>
+            <p className="text-white-areatomic-500 text-[17px]">{text}</p>
             <div className="mb-10"></div>
             <div className="grid grid-cols-2 justify-items-start">
-                <ButtonPrimary className="mx-0 mt-4 items-center justify-center">
+                <ButtonSecondary
+                    className="mx-0 mt-4 items-center justify-center"
+                    onClick={() => read()}
+                >
                     Lire
-                </ButtonPrimary>
-                <ButtonSecondary className="flex mx-0 mt-4 items-center justify-center">
-                    Voir plus{' '}
-                    <img
-                        src={arrow}
-                        alt="Flèche voir plus, Areatomic sit web sur mesure"
-                        className="ml-2"
-                    />
                 </ButtonSecondary>
+                {more && (
+                    <ButtonSecondary
+                        className="flex mx-0 mt-4 items-center justify-center"
+                        onClick={() => navigate('/articles')}
+                    >
+                        Voir plus{' '}
+                        <div className="material-icons arrow-next">
+                            arrow_back
+                        </div>
+                    </ButtonSecondary>
+                )}
+                {authContext.type === 'admin' && (
+                    <ButtonPrimary className="mx-0 mt-4" onClick={() => edit()}>
+                        Editer
+                    </ButtonPrimary>
+                )}
             </div>
         </div>
     )

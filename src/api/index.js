@@ -3,6 +3,7 @@ export const proxy = process.env.REACT_APP_PROXY
 export const url = `${proxy}/api/v1`
 
 export const request = async (method, path, body, token, contentType) => {
+    console.log(contentType)
     const config = {
         method: method,
         url: `${url}/${path}`,

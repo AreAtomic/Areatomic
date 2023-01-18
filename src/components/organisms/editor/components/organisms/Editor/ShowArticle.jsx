@@ -4,7 +4,6 @@ import { createEditor } from 'slate'
 import { withHistory } from 'slate-history'
 import { Slate, Editable, withReact } from 'slate-react'
 import { Link, Image, Video } from '../../molecules'
-import { Toolbar } from '../'
 
 import {
     sizeMap,
@@ -159,7 +158,7 @@ const Leaf = ({ attributes, children, leaf }) => {
     return <span {...attributes}>{children}</span>
 }
 
-export const SlateEditor = ({ value, setValue }) => {
+export const SlateReader = ({ value }) => {
     const editor = useMemo(
         () =>
             withHistory(
@@ -175,17 +174,13 @@ export const SlateEditor = ({ value, setValue }) => {
     }, [])
 
     return (
-        <Slate
-            editor={editor}
-            value={value}
-            onChange={(newValue) => setValue(newValue)}
-        >
-            <Toolbar />
-            <div className="border-t bg-white-areatomic-500 h-fit p-3 drop-shadow-sm relative rounded">
+        <Slate editor={editor} value={value}>
+            <div className="h-fit drop-shadow-sm relative rounded">
                 <Editable
                     placeholder="Votre texte ..."
                     renderElement={renderElement}
                     renderLeaf={renderLeaf}
+                    readOnly
                 />
             </div>
         </Slate>

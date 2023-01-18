@@ -19,7 +19,7 @@ const AuthContext = React.createContext({
     loggedIn: (email, password) => {},
     loggedOut: () => {},
     editProfil: (firstName, lastName) => {},
-    request: (method, path, body, callback, contentType) => {},
+    request: async (method, path, body, contentType) => {},
 })
 
 export default function AuthContextProvider({ children }) {
@@ -191,7 +191,7 @@ export default function AuthContextProvider({ children }) {
                 loggedIn: loggedIn,
                 loggedOut: loggedOut,
                 editProfil: editProfil,
-                request: request,
+                request: handleRequest,
             }}
         >
             {children}

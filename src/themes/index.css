@@ -4,8 +4,10 @@
 @tailwind screens;
 @tailwind utilities;
 
-@import "./node_modules/codemirror/lib/codemirror.css";
-
 html {
     overflow-x: hidden;
+}
+
+.arrow-next {
+    transform: rotate(180deg);
 }

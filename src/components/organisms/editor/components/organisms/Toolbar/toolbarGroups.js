@@ -45,18 +45,6 @@ const toolbarGroups = [
     ],
     [
         {
-            id: 8,
-            format: 'superscript',
-            type: 'mark',
-        },
-        {
-            id: 9,
-            format: 'subscript',
-            type: 'mark',
-        },
-    ],
-    [
-        {
             id: 10,
             format: 'orderedList',
             type: 'block',
@@ -90,7 +78,6 @@ const toolbarGroups = [
             format: 'link',
             type: 'link',
         },
-        { id: 16, format: 'code', type: 'mark' },
     ],
 ]
 

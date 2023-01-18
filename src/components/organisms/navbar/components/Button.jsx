@@ -34,8 +34,6 @@ const Connexion = (props) => {
 export const Button = () => {
     const authContext = useAuth()
 
-    console.log(authContext.isLogged)
-
     return authContext.isLogged === true ? (
         <Deconnexion logout={() => authContext.loggedOut} />
     ) : (
