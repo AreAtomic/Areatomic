@@ -50,13 +50,12 @@ const Router = () => {
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/accueil" element={<Home />} />
-                {/* <Route path="/produits" element={<Produits />} />
-                <Route path="/articles" element={<Articles />} /> */}
+                <Route path="/articles" element={<Articles />} />
+                {/* <Route path="/produits" element={<Produits />} />*/}
                 <Route path="/services" element={<Services />} />
                 <Route path="/register" element={<Register />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/build" element={<Build />} />
-                <Route path="/articles" element={<Articles />} />
             </Routes>
         </div>
     )
