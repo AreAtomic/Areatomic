@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import { ButtonPrimary, ButtonSecondary } from '../buttons'
 import { Image } from '../../organisms/image'
 import { HeadingTwo } from '../headings'
@@ -8,8 +9,25 @@ import { useNavigate } from 'react-router-dom'
 // TODO: icon "->" sur bouton "Voir plus"
 
 export const CardWithoutImage = (props) => {
+    const [hidden, setHidden] = useState(false)
+
+    useEffect(() => {
+        const width = window.innerWidth
+
+        window.addEventListener('resize', () => {
+            const width = window.innerWidth
+            setHidden(width < 1024)
+        })
+
+        setHidden(width < 1024)
+    }, [])
+
     return (
-        <div className="w-96 md:w-card-sm max-w-card max-h-card-sm bg-component-500 rounded px-4 py-4">
+        <div
+            className={`w-96 md:w-card-sm max-w-card max-h-card-sm bg-component-500 rounded px-4 py-4 ${
+                hidden && 'mx-auto'
+            }`}
+        >
             <HeadingTwo color="text-blue-areatomic-500">
                 {props.heading}
             </HeadingTwo>
@@ -76,7 +94,13 @@ export const CardArticle = ({
             <HeadingTwo color="text-blue-areatomic-500">{heading}</HeadingTwo>
             <div className="mb-2"></div>
             <div className="h-40">
-                <Image id={image} url={false} width="300px" height="150px" className="mx-auto rounded-md" />
+                <Image
+                    id={image}
+                    url={false}
+                    width="300px"
+                    height="150px"
+                    className="mx-auto rounded-md"
+                />
             </div>
             <div className="mb-2"></div>
             <HeadingTwo color="text-blue-areatomic-500">{title}</HeadingTwo>

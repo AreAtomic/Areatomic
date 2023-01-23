@@ -5,6 +5,7 @@ import {
     HeadingOne,
     CardWithoutImage,
     ButtonPrimary,
+    ButtonSecondary,
 } from '../components/atoms'
 import { Navbar, Footer } from '../components/organisms/index'
 
@@ -12,8 +13,11 @@ import rocket from '../assets/rocket-3d.png'
 import planetPurple from '../assets/planet-purple.png'
 import planetGold from '../assets/planet-gold.png'
 import planetSilver from '../assets/planet-silver.png'
+import animationGroup from '../assets/animation-group.svg'
+import { useNavigate } from 'react-router-dom'
 
 const Home = (props) => {
+    const navigate = useNavigate()
     // Animations
     const [styles, setStyles] = useState({
         rocket: {
@@ -45,6 +49,7 @@ const Home = (props) => {
             width: '5vw',
         },
     })
+    const [hidden, setHidden] = useState(false)
 
     useEffect(() => {
         const width = window.innerWidth
@@ -54,20 +59,20 @@ const Home = (props) => {
                     position: 'absolute',
                     zIndex: '4',
                     left: '10%',
-                    top: '5%',
+                    top: '7%',
                     width: '30vw',
                 },
                 planetPurple: {
                     position: 'absolute',
                     zIndex: '3',
-                    top: '0',
+                    top: '2%',
                     left: '0',
                     width: '15vw',
                 },
                 planetGold: {
                     position: 'absolute',
                     zIndex: '2',
-                    top: '0',
+                    top: '2%',
                     left: '70%',
                     width: '5vw',
                 },
@@ -80,19 +85,48 @@ const Home = (props) => {
                 },
             })
         }, 100)
+
+        window.addEventListener('resize', () => {
+            const width = window.innerWidth
+            setHidden(width < 1024)
+        })
+
+        setHidden(width < 1024)
     }, [])
 
     return (
         <>
             <Navbar />
-            <div className="bg-gradient-to-b from-blue-areatomic-50 to-white-areatomic-500 w-100">
-                <div className="grid grid-cols-2 py-10 md:px-10 px-3">
+            <div className="bg-gradient-to-b from-blue-areatomic-50 to-white-areatomic-500 w-100 grid">
+                <div
+                    className={`grid ${
+                        hidden ? 'w-fit mx-auto' : 'grid-cols-2'
+                    } py-10 md:px-10 px-3`}
+                >
                     {/* Left side */}
-                    <div className="w-3/4">
+                    <div className={`${!hidden && 'w-3/4'}`}>
                         <div className="mb-10" />
                         <HeadingOne>
                             Areatomic met votre business en <b>orbite</b>
                         </HeadingOne>
+                        {hidden && (
+                            <div className='grid justify-center'>
+                                <img
+                                    src={animationGroup}
+                                    id="rocket"
+                                    alt="Votre business sur mesure qui décolle, by areatomic"
+                                    className="duration-1000 ease-in mx-auto"
+                                />
+                                <div className='mx-auto'>
+
+                                <ButtonPrimary
+                                    onClick={() => navigate('/login')}
+                                    >
+                                    Connexion
+                                </ButtonPrimary>
+                                    </div>
+                            </div>
+                        )}
                         <div className="mb-6" />
                         <div className="py-5">
                             <HashLink
@@ -100,6 +134,7 @@ const Home = (props) => {
                                     el.scrollIntoView({ behavior: 'smooth' })
                                 }
                                 to={'/services#sur-mesure'}
+                                className="w-fit"
                             >
                                 <CardWithoutImage
                                     heading="Site sur mesure"
@@ -135,34 +170,36 @@ const Home = (props) => {
                         </div>
                     </div>
                     {/* Right side */}
-                    <div className="relative h-screen">
-                        <div className="hidden"></div>
-                        <img
-                            src={rocket}
-                            id="rocket"
-                            alt="Votre business sur mesure qui décolle, by areatomic"
-                            className="duration-1000 ease-in"
-                            style={styles.rocket}
-                        />
-                        <img
-                            src={planetPurple}
-                            alt="Planète pour votre site sur mesure, by areatomic"
-                            className="duration-1000 ease-in"
-                            style={styles.planetPurple}
-                        />
-                        <img
-                            src={planetGold}
-                            alt="Planète pour des formations web sur mesure, by areatomic"
-                            className="duration-1000 ease-in"
-                            style={styles.planetGold}
-                        />
-                        <img
-                            src={planetSilver}
-                            alt="Planète pour des outils de développement sur mesure, by areatomic"
-                            className="duration-1000 ease-in"
-                            style={styles.planetSilver}
-                        />
-                    </div>
+                    {!hidden && (
+                        <div className="relative h-screen">
+                            <div className="hidden"></div>
+                            <img
+                                src={rocket}
+                                id="rocket"
+                                alt="Votre business sur mesure qui décolle, by areatomic"
+                                className="duration-1000 ease-in"
+                                style={styles.rocket}
+                            />
+                            <img
+                                src={planetPurple}
+                                alt="Planète pour votre site sur mesure, by areatomic"
+                                className="duration-1000 ease-in"
+                                style={styles.planetPurple}
+                            />
+                            <img
+                                src={planetGold}
+                                alt="Planète pour des formations web sur mesure, by areatomic"
+                                className="duration-1000 ease-in"
+                                style={styles.planetGold}
+                            />
+                            <img
+                                src={planetSilver}
+                                alt="Planète pour des outils de développement sur mesure, by areatomic"
+                                className="duration-1000 ease-in"
+                                style={styles.planetSilver}
+                            />
+                        </div>
+                    )}
                 </div>
                 <section id="produits" className="py-10 px-10 hidden">
                     <div className="flex">

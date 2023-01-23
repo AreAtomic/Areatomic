@@ -26,14 +26,14 @@ const Loading = () => {
 export const ButtonPrimary = (props) => {
     return (
         <button
-            className={`bg-purple-areatomic-500 text-blue-areatomic-500 min-w-button drop-shadow-sm ${
+            className={`bg-purple-areatomic-500 text-blue-areatomic-500 min-w-button drop-shadow-sm font-semibold ${
                 props.className
             } ${
                 (props.loading || props.disabled) &&
                 'bg-purple-areatomic-300 opacity-75 cursor-not-allowed inline-flex items-center'
             }`}
             onClick={props.onClick}
-            style={{ height: '35px', borderRadius: '20px' }}
+            style={{ height: '35px', borderRadius: '5px' }}
             type={props.type}
             disabled={props.disabled || props.loading}
         >
@@ -43,20 +43,25 @@ export const ButtonPrimary = (props) => {
     )
 }
 
-export const ButtonSecondary = (props) => {
+export const ButtonSecondary = ({
+    className,
+    loading,
+    disabled,
+    onClick,
+    type,
+    children,
+}) => {
     return (
         <button
-            className={`bg-blue-areatomic-500 text-purple-areatomic-500 min-w-button  drop-shadow-sm ${
-                props.className
-            } ${
-                (props.loading || props.disabled) &&
+            className={`bg-blue-areatomic-500 text-purple-areatomic-500 min-w-button font-semibold drop-shadow-sm ${className} ${
+                (loading || disabled) &&
                 'bg-blue-areatomic-300 opacity-75 cursor-not-allowed inline-flex items-center'
             }`}
-            onClick={props.onClick}
-            style={{ height: '35px', borderRadius: '20px' }}
-            type={props.type}
+            onClick={onClick}
+            style={{ height: '35px', borderRadius: '5px' }}
+            type={type}
         >
-            {props.children}
+            {children}
         </button>
     )
 }

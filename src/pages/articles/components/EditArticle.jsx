@@ -18,10 +18,6 @@ import AddSection from './AddSection'
 const EditArticle = () => {
     const articleContext = useArticle()
 
-    useEffect(() => {
-        console.log(articleContext)
-    }, [articleContext])
-
     return (
         <>
             <div className="flex my-4 w-fit">

@@ -19,7 +19,7 @@ export const NavbarLink = (props) => {
                         location.includes(props.href) ||
                         (props.href === '/accueil' && location === '/')
                             ? 'text-blue-areatomic-200 lg:text-purple-areatomic-200'
-                            : 'text-purple-areatomic-500'
+                            : 'text-blue-areatomic-500'
                     }`}
                 >
                     <b>{props.titre}</b>

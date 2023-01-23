@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { ButtonPrimary } from '../../../atoms'
+import { ButtonPrimary, ButtonSecondary } from '../../../atoms'
 import { useAuth } from '../../../../contexts'
 
 const Deconnexion = () => {
@@ -7,7 +7,7 @@ const Deconnexion = () => {
 
     return (
         <div id="logout" onClick={authContext.loggedOut}>
-            <ButtonPrimary className="mx-0">Déconnexion</ButtonPrimary>
+            <ButtonSecondary className="mx-0 mb-3">Déconnexion</ButtonSecondary>
         </div>
     )
 }
@@ -17,15 +17,15 @@ const Connexion = (props) => {
     return (
         <div id="Login">
             <Link to="/login">
-                <ButtonPrimary
-                    className={`mx-0 ${
+                <ButtonSecondary
+                    className={`mx-0 mb-3 ${
                         (location.includes('login') ||
                             location.includes('register')) &&
                         'cursor-not-allowed'
                     }`}
                 >
                     Connexion
-                </ButtonPrimary>
+                </ButtonSecondary>
             </Link>
         </div>
     )
