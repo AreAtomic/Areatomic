@@ -1,13 +1,7 @@
 import { useArticle } from '../../contexts'
 
-import {
-    ButtonPrimary,
-    ButtonSecondary,
-    CardArticle,
-} from '../../components/atoms'
-import { Code, Editor, Navbar } from '../../components/organisms'
+import { Navbar } from '../../components/organisms'
 
-import image from '../../assets/image-product.png'
 import { AllArticles, EditArticle, ReadArticle } from './components'
 import { useEffect } from 'react'
 import { useParams } from 'react-router-dom'

@@ -44,7 +44,6 @@ const ArticleContext = createContext({
     reOrder: (index, newIndex) => {},
     createArticle: () => {},
     editArticle: (state) => {},
-    getArticles: () => {},
     setRead: (value) => {},
     setCover: (value) => {},
 })
