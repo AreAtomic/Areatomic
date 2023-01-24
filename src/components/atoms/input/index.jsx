@@ -103,7 +103,7 @@ const Title = ({ value, onChange, placeholder }) => {
                 value={value}
                 id="title"
                 type="text"
-                className={`text-3xl py-3 font-bold`}
+                className={`text-3xl py-3 px-2 font-bold`}
                 placeholder={placeholder}
             />
         </div>
@@ -145,4 +145,40 @@ const Dropdown = ({ value, onChange, values }) => {
     )
 }
 
-export { Email, Password, Text, Title, Dropdown }
+const Money = ({ value, onChange }) => {
+    return (
+        <div>
+            <label for="price" class="block text-sm font-medium">
+                Prix
+            </label>
+            <div class="relative mb-3 rounded-md shadow-sm p-4 bg-white ">
+                <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                    <span class="text-gray-500 sm:text-sm">€</span>
+                </div>
+                <input
+                    type="text"
+                    name="price"
+                    id="price"
+                    class="block w-fit rounded-md ml-7 mr-12 sm:text-sm"
+                    placeholder="0.00"
+                    value={value}
+                    onChange={(e) => onChange(e.target.value)}
+                />
+                <div class="absolute inset-y-0 right-0 flex items-center">
+                    <label for="currency" class="sr-only">
+                        Currency
+                    </label>
+                    <select
+                        id="currency"
+                        name="currency"
+                        class="h-full rounded-md border-transparent bg-transparent py-0 pl-2 pr-7 text-gray-500 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                    >
+                        <option>EUR</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+export { Email, Password, Text, Title, Dropdown, Money }

@@ -1,12 +1,13 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
-import { Build, Home, Services, Register, Login, Articles } from './pages'
+import { Build, Home, Services, Register, Login, Articles, Products } from './pages'
 import {
     useUx,
     AuthContextProvider,
     useAuth,
     ArticleContextProvider,
     ImageContextProvider,
+    ProductContextProvider,
 } from './contexts'
 import './themes/index.css'
 
@@ -52,7 +53,7 @@ const Router = () => {
                 <Route path="/accueil" element={<Home />} />
                 <Route path="/articles" element={<Articles />} />
                 <Route path="/articles/:id" element={<Articles />} />
-                {/* <Route path="/produits" element={<Produits />} />*/}
+                <Route path="/products" element={<Products />} />
                 <Route path="/services" element={<Services />} />
                 <Route path="/register" element={<Register />} />
                 <Route path="/login" element={<Login />} />
@@ -67,7 +68,9 @@ const App = () => {
         <AuthContextProvider>
             <ArticleContextProvider>
                 <ImageContextProvider>
-                    <Router />
+                    <ProductContextProvider>
+                        <Router />
+                    </ProductContextProvider>
                 </ImageContextProvider>
             </ArticleContextProvider>
         </AuthContextProvider>

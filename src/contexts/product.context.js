@@ -9,7 +9,7 @@ const ProductContext = createContext({
     edit: false,
     images: [],
     title: null,
-    description: null,
+    description: [{ type: 'paragraph', children: [{ text: '' }] }],
     price: '0.00',
     currency: 'EUR',
     lastEdit: dayjs(),
@@ -42,7 +42,9 @@ export default function ProductContextProvider({ children }) {
     const [edit, setEdit] = useState(false)
     const [images, setImages] = useState([])
     const [title, setTitle] = useState(null)
-    const [description, setDescription] = useState(null)
+    const [description, setDescription] = useState([
+        { type: 'paragraph', children: [{ text: '' }] },
+    ])
     const [price, setPrice] = useState('0.00')
     const [lastEdit, setLastEdit] = useState(dayjs())
     const [show, setShow] = useState(false)
@@ -53,7 +55,7 @@ export default function ProductContextProvider({ children }) {
 
     const selectProduct = (product, edit) => {
         setId(product._id)
-        setTitle(product.title)
+        setTitle(product.name)
         setDescription(product.description)
         setImages(product.images)
         setPrice(product.price)
@@ -72,11 +74,17 @@ export default function ProductContextProvider({ children }) {
         setProducts(response.products)
     }
 
+    const returnImageId = () => {
+        return images.map((image) => {
+            return image._id
+        })
+    }
+
     const createProduct = async () => {
         const response = await authContext.request('post', 'product', {
-            title: title,
+            name: title,
             description: description,
-            images: images,
+            images: returnImageId(images),
             price: price,
             currency: currency,
             link: link,

@@ -17,6 +17,7 @@ import planetSilver from '../assets/planet-silver.png'
 import animationGroup from '../assets/animation-group.svg'
 import { useNavigate } from 'react-router-dom'
 import { useArticle, useAuth } from '../contexts'
+import { AllArticles } from './articles/components'
 
 const Home = (props) => {
     const navigate = useNavigate()
@@ -238,149 +239,7 @@ const Home = (props) => {
                     </div>
                     <div>
                         <div id="listeArticle" className="mb-20">
-                            <div className="grid xl:grid-cols-3 lg:grid-cols-2 gap-3 justify-center">
-                                {articleContext.articles?.length == 0 && (
-                                    <>
-                                        <div class="border border-purple-areatomic-300 bg-component-500 shadow rounded-md p-4 max-w-sm w-full">
-                                            <div class="animate-pulse flex space-x-4">
-                                                <div class="flex-1 space-y-6 py-6">
-                                                    <div class="grid grid-cols-3 gap-4">
-                                                        <div class="h-2 bg-purple-areatomic-700 rounded col-span-2"></div>
-                                                    </div>
-                                                    <div class="h-40 bg-purple-areatomic-700 rounded"></div>
-                                                    <div class="space-y-3">
-                                                        <div class="h-2 bg-purple-areatomic-700 rounded"></div>
-                                                        <div class="h-2 bg-purple-areatomic-700 rounded"></div>
-                                                        <div class="h-2 bg-purple-areatomic-700 rounded"></div>
-                                                        <div class="h-2 bg-purple-areatomic-700 rounded"></div>
-                                                        <div class="grid grid-cols-3 gap-4">
-                                                            <div class="h-2 bg-purple-areatomic-700 rounded col-span-2"></div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="grid grid-cols-2 gap-4">
-                                                        <div class="h-10 bg-purple-areatomic-700 rounded"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="border border-purple-areatomic-300 bg-component-500 shadow rounded-md p-4 max-w-sm w-full">
-                                            <div class="animate-pulse flex space-x-4">
-                                                <div class="flex-1 space-y-6 py-6">
-                                                    <div class="grid grid-cols-3 gap-4">
-                                                        <div class="h-2 bg-purple-areatomic-700 rounded col-span-2"></div>
-                                                    </div>
-                                                    <div class="h-40 bg-purple-areatomic-700 rounded"></div>
-                                                    <div class="space-y-3">
-                                                        <div class="h-2 bg-purple-areatomic-700 rounded"></div>
-                                                        <div class="h-2 bg-purple-areatomic-700 rounded"></div>
-                                                        <div class="h-2 bg-purple-areatomic-700 rounded"></div>
-                                                        <div class="h-2 bg-purple-areatomic-700 rounded"></div>
-                                                        <div class="grid grid-cols-3 gap-4">
-                                                            <div class="h-2 bg-purple-areatomic-700 rounded col-span-2"></div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="grid grid-cols-2 gap-4">
-                                                        <div class="h-10 bg-purple-areatomic-700 rounded"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="border border-purple-areatomic-300 bg-component-500 shadow rounded-md p-4 max-w-sm w-full">
-                                            <div class="animate-pulse flex space-x-4">
-                                                <div class="flex-1 space-y-6 py-6">
-                                                    <div class="grid grid-cols-3 gap-4">
-                                                        <div class="h-2 bg-purple-areatomic-700 rounded col-span-2"></div>
-                                                    </div>
-                                                    <div class="h-40 bg-purple-areatomic-700 rounded"></div>
-                                                    <div class="space-y-3">
-                                                        <div class="h-2 bg-purple-areatomic-700 rounded"></div>
-                                                        <div class="h-2 bg-purple-areatomic-700 rounded"></div>
-                                                        <div class="h-2 bg-purple-areatomic-700 rounded"></div>
-                                                        <div class="h-2 bg-purple-areatomic-700 rounded"></div>
-                                                        <div class="grid grid-cols-3 gap-4">
-                                                            <div class="h-2 bg-purple-areatomic-700 rounded col-span-2"></div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="grid grid-cols-2 gap-4">
-                                                        <div class="h-10 bg-purple-areatomic-700 rounded"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </>
-                                )}
-                                {articleContext.articles.map(
-                                    (article, index) => {
-                                        if (authContext.type === 'admin') {
-                                            return (
-                                                <CardArticle
-                                                    heading={article.title}
-                                                    text={
-                                                        article.sections[0][0]
-                                                            .children[0].text
-                                                    }
-                                                    image={article.cover}
-                                                    alt="Template React & Tailwind by Areatomic"
-                                                    author={article._author}
-                                                    edit={() => {
-                                                        articleContext.selectArticle(
-                                                            article,
-                                                            true
-                                                        )
-                                                        navigate('/articles')
-                                                    }}
-                                                    read={() => {
-                                                        {
-                                                            articleContext.selectArticle(
-                                                                article,
-                                                                false
-                                                            )
-                                                            navigate(
-                                                                '/articles'
-                                                            )
-                                                        }
-                                                    }}
-                                                />
-                                            )
-                                        } else {
-                                            if (article.state === 'published') {
-                                                return (
-                                                    <CardArticle
-                                                        heading={article.title}
-                                                        text={
-                                                            article
-                                                                .sections[0][0]
-                                                                .children[0]
-                                                                .text
-                                                        }
-                                                        image={article.cover}
-                                                        alt="Template React & Tailwind by Areatomic"
-                                                        author={article._author}
-                                                        edit={() => {
-                                                            articleContext.selectArticle(
-                                                                article,
-                                                                true
-                                                            )
-                                                            navigate(
-                                                                '/articles'
-                                                            )
-                                                        }}
-                                                        read={() => {
-                                                            articleContext.selectArticle(
-                                                                article,
-                                                                false
-                                                            )
-                                                            navigate(
-                                                                '/articles'
-                                                            )
-                                                        }}
-                                                    />
-                                                )
-                                            }
-                                        }
-                                    }
-                                )}
-                            </div>
+                            <AllArticles />
                         </div>
                     </div>
                 </section>

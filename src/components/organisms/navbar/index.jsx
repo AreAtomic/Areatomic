@@ -65,7 +65,7 @@ export const Navbar = () => {
                     } ${closed && 'hidden'} py-1`}
                 >
                     <Links />
-                    <div className="mx-4">
+                    <div className="mx-4 mt-2">
                         <Button />
                     </div>
                 </div>

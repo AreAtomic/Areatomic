@@ -45,32 +45,36 @@ export const CardWithoutImage = (props) => {
     )
 }
 
-export const CardProduct = (props) => {
+export const CardProduct = ({ image, heading, price, text, edit, show }) => {
     return (
         <div className="w-card-product bg-component-500 rounded px-4 py-7">
-            <HeadingTwo color="text-blue-areatomic-500">
-                {props.heading}
-            </HeadingTwo>
+            <HeadingTwo color="text-blue-areatomic-500">{heading}</HeadingTwo>
             <div className="mb-2"></div>
-            <img src={props.image} alt={props.alt} className="rounded-md" />
+            <Image
+                id={image}
+                url={false}
+                width="300px"
+                height="150px"
+                className="mx-auto rounded-md"
+            />
             <div className="mb-2"></div>
-            <HeadingTwo color="text-blue-areatomic-500">
-                {props.price}€
-            </HeadingTwo>
+            <HeadingTwo color="text-blue-areatomic-500">{price}€</HeadingTwo>
             <div className="mb-2"></div>
-            <p className="text-white-areatomic-500 text-[17px]">{props.text}</p>
+            <p className="text-white-areatomic-500 text-[17px]">{text}</p>
             <div className="mb-10"></div>
             <div className="grid grid-cols-2 justify-items-start">
-                <ButtonPrimary className="mx-0 mt-4 items-center justify-center">
-                    Acheter
-                </ButtonPrimary>
-                <ButtonSecondary className="flex mx-0 mt-4 items-center justify-center">
+                <ButtonPrimary
+                    className="mx-0 mt-4 items-center justify-center flex"
+                    onClick={() => show()}
+                >
                     Voir plus{' '}
-                    <img
-                        src={arrow}
-                        alt="Flèche voir plus, Areatomic sit web sur mesure"
-                        className="ml-2"
-                    />
+                    <span className="ml-3 material-icons">add_circle</span>
+                </ButtonPrimary>
+                <ButtonSecondary
+                    className="flex mx-0 mt-4 items-center justify-center"
+                    onClick={() => show()}
+                >
+                    Editer
                 </ButtonSecondary>
             </div>
         </div>
