@@ -3,27 +3,7 @@ import dayjs from 'dayjs'
 import { useUx } from './ux.context'
 import { useAuth } from './auth.context'
 
-export const type = [
-    { name: 'headingOne', display: 'Heading 1' },
-    { name: 'headingTwo', display: 'Heading 2' },
-    { name: 'headingThree', display: 'Heading 3' },
-    { name: 'paragraph', display: 'Paragraph' },
-    { name: 'bold', display: 'Bold' },
-    { name: 'italic', display: 'Italic' },
-    { name: 'underline', display: 'Underline' },
-    { name: 'strikethrough', display: 'Strikethrough' },
-    { name: 'orderedList', display: 'Ordered List' },
-    { name: 'unorderedList', display: 'Unordered List' },
-    { name: 'code', display: 'Code' },
-]
-
-export const status = [
-    { name: 'draft', display: 'Brouillon' },
-    { name: 'published', display: 'Publié' },
-    { name: 'archived', display: 'Archivé' },
-]
-
-const ArticleContext = createContext({
+const ProductContext = createContext({
     products: [],
     id: null,
     edit: false,
@@ -53,7 +33,7 @@ const ArticleContext = createContext({
     setDigital: (value) => {},
 })
 
-export default function ArticleContextProvider({ children }) {
+export default function ProductContextProvider({ children }) {
     const uxContext = useUx()
     const authContext = useAuth()
 
@@ -78,7 +58,7 @@ export default function ArticleContextProvider({ children }) {
         setImages(product.images)
         setPrice(product.price)
         if (edit) setEdit(true)
-        else setRead(true)
+        else setShow(true)
     }
 
     const addImage = (image) => {
@@ -123,7 +103,7 @@ export default function ArticleContextProvider({ children }) {
     }
 
     return (
-        <ArticleContext.Provider
+        <ProductContext.Provider
             value={{
                 products: products,
                 id: id,
@@ -155,8 +135,8 @@ export default function ArticleContextProvider({ children }) {
             }}
         >
             {children}
-        </ArticleContext.Provider>
+        </ProductContext.Provider>
     )
 }
 
-export const useArticle = () => useContext(ArticleContext)
+export const useProduct = () => useContext(ProductContext)
