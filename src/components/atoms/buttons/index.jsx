@@ -26,14 +26,13 @@ const Loading = () => {
 export const ButtonPrimary = (props) => {
     return (
         <button
-            className={`bg-purple-areatomic-500 text-blue-areatomic-500 min-w-button drop-shadow-sm font-semibold ${
+            className={`bg-purple-areatomic-500 text-blue-areatomic-500 min-w-button drop-shadow-sm font-semibold rounded-lg py-1 px-3 ${
                 props.className
             } ${
                 (props.loading || props.disabled) &&
                 'bg-purple-areatomic-300 opacity-75 cursor-not-allowed inline-flex items-center'
             }`}
             onClick={props.onClick}
-            style={{ height: '35px', borderRadius: '5px' }}
             type={props.type}
             disabled={props.disabled || props.loading}
         >
@@ -53,12 +52,11 @@ export const ButtonSecondary = ({
 }) => {
     return (
         <button
-            className={`bg-blue-areatomic-500 text-purple-areatomic-500 min-w-button font-semibold drop-shadow-sm ${className} ${
+            className={`bg-blue-areatomic-500 text-purple-areatomic-500 min-w-button font-semibold drop-shadow-sm rounded-lg py-1 px-3 ${className} ${
                 (loading || disabled) &&
                 'bg-blue-areatomic-300 opacity-75 cursor-not-allowed inline-flex items-center'
             }`}
             onClick={onClick}
-            style={{ height: '35px', borderRadius: '5px' }}
             type={type}
         >
             {children}

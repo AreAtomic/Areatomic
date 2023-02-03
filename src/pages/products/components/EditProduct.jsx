@@ -50,26 +50,22 @@ const EditProduct = () => {
                                     typeof productContext.images[0] === 'object'
                                 }
                             />
-                            {/* <Modal.Delete
-                                title="Suppression image de couverture"
-                                action="supprimer l'image de couverture"
-                                onValid={() => productContext.setCover(null)}
-                            /> */}
                             <div className="flex flex-row w-full overflow-auto scrollbar">
                                 {productContext.images.map((image, index) => {
                                     if (index === 0) {
                                         return (
-                                            <div className='w-1-3 mr-5 mt-5'>
-
-                                            <Image.ImageUpload
-                                                setValue={(value) =>
-                                                    productContext.setImages([
-                                                        ...productContext.images,
-                                                        value,
-                                                    ])
-                                                }
+                                            <div className="w-1-3 mr-5 mt-5">
+                                                <Image.ImageUpload
+                                                    setValue={(value) =>
+                                                        productContext.setImages(
+                                                            [
+                                                                ...productContext.images,
+                                                                value,
+                                                            ]
+                                                        )
+                                                    }
                                                 />
-                                                </div>
+                                            </div>
                                         )
                                     }
                                     return (
@@ -100,7 +96,7 @@ const EditProduct = () => {
                         </>
                     )}
                 </div>
-                <div className="grid">
+                <div className="ml-5">
                     <Input.Money
                         value={productContext.price}
                         onChange={(value) => productContext.setPrice(value)}

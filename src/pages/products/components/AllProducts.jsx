@@ -32,7 +32,6 @@ const AllProducts = () => {
                     </>
                 )}
                 {productContext.products.map((product, index) => {
-                    console.log(product)
                     return (
                         <CardProduct
                             heading={product.name}

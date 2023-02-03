@@ -181,7 +181,7 @@ export const SlateEditor = ({ value, setValue }) => {
             onChange={(newValue) => setValue(newValue)}
         >
             <Toolbar />
-            <div className="border-t bg-white-areatomic-500 h-fit p-3 drop-shadow-sm relative rounded">
+            <div className="border-t bg-white-areatomic-500 h-fit p-3 drop-shadow-sm relative rounded-lg">
                 <Editable
                     placeholder="Votre texte ..."
                     renderElement={renderElement}
