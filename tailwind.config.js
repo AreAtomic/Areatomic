@@ -916,6 +916,7 @@ module.exports = {
             'card-product': '400px',
             'card-sm': '450px',
             card: '500px',
+            mobile: '90vw'
         }),
         zIndex: {
             auto: 'auto',

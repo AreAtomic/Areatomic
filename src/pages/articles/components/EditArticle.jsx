@@ -66,17 +66,41 @@ const EditArticle = () => {
                         key={`${index}${section[0].type}`}
                     >
                         {section[0].type !== 'code' ? (
-                            <Editor
-                                value={section}
-                                setValue={(value) => {
-                                    articleContext.setContent(index, value)
-                                }}
-                            />
+                            section[0].type !== 'image' ? (
+                                <Editor
+                                    value={section}
+                                    setValue={(value) => {
+                                        articleContext.setContent(index, value)
+                                    }}
+                                />
+                            ) : section[0].text !== '' ? (
+                                <div className="relative w-full grid justify-center overflow-clip">
+                                    <Image.Image
+                                        id={
+                                            typeof section[0].text ===
+                                            'object'
+                                                ? section[0].text
+                                                : section[0].text
+                                        }
+                                        url={
+                                            typeof section[0].text ===
+                                            'object'
+                                        }
+                                    />
+                                </div>
+                            ) : (
+                                <div className="grid">
+                                    <Image.ImageUpload
+                                        setValue={(value) =>
+                                            articleContext.setCover(value)
+                                        }
+                                    />
+                                </div>
+                            )
                         ) : (
                             <Code
                                 value={section[0].text}
                                 setValue={(value) => {
-                                    console.log(value)
                                     articleContext.setContent(index, [
                                         { ...section[0], text: value },
                                     ])
@@ -125,7 +149,9 @@ const EditArticle = () => {
                 <ButtonPrimary
                     onClick={() => {
                         if (articleContext.id)
-                            articleContext.editArticle(status[articleContext.status].name)
+                            articleContext.editArticle(
+                                status[articleContext.status].name
+                            )
                         else articleContext.createArticle()
                     }}
                 >

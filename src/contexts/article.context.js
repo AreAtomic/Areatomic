@@ -15,6 +15,7 @@ export const type = [
     { name: 'orderedList', display: 'Ordered List' },
     { name: 'unorderedList', display: 'Unordered List' },
     { name: 'code', display: 'Code' },
+    { name: 'image', display: 'Image' },
 ]
 
 export const status = [

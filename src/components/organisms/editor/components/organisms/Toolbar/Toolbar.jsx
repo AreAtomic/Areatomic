@@ -86,7 +86,7 @@ const Toolbar = () => {
     }
 
     return (
-        <div className="z-[10] relative rounded-sm bg-white-areatomic-500 drop-shadow flex items-center py-3 overflow-x-scroll">
+        <div className="z-[10] relative rounded-sm max-h-20 bg-white-areatomic-500 drop-shadow flex items-center py-3 overflow-x-scroll">
             {toolbarGroups.map((group, index) => (
                 <span key={index} className="flex">
                     {group.map((element) => {

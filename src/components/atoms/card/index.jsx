@@ -25,7 +25,7 @@ export const CardWithoutImage = (props) => {
     return (
         <div
             className={`w-96 md:w-card-sm max-w-card max-h-card-sm bg-component-500 rounded px-4 py-4 ${
-                hidden && 'mx-auto'
+                hidden && ''
             }`}
         >
             <HeadingTwo color="text-blue-areatomic-500">

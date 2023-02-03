@@ -175,19 +175,21 @@ export const SlateEditor = ({ value, setValue }) => {
     }, [])
 
     return (
-        <Slate
-            editor={editor}
-            value={value}
-            onChange={(newValue) => setValue(newValue)}
-        >
-            <Toolbar />
-            <div className="border-t bg-white-areatomic-500 h-fit p-3 drop-shadow-sm relative rounded">
-                <Editable
-                    placeholder="Votre texte ..."
-                    renderElement={renderElement}
-                    renderLeaf={renderLeaf}
-                />
-            </div>
-        </Slate>
+        <div className="px-2 overflow-auto scrollbar">
+            <Slate
+                editor={editor}
+                value={value}
+                onChange={(newValue) => setValue(newValue)}
+            >
+                <Toolbar />
+                <div className="border-t bg-white-areatomic-500 h-fit p-3 drop-shadow-sm relative rounded">
+                    <Editable
+                        placeholder="Votre texte ..."
+                        renderElement={renderElement}
+                        renderLeaf={renderLeaf}
+                    />
+                </div>
+            </Slate>
+        </div>
     )
 }

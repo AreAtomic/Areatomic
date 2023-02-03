@@ -104,27 +104,27 @@ const Home = (props) => {
     return (
         <>
             <Navbar />
-            <div className="bg-gradient-to-b from-blue-areatomic-50 to-white-areatomic-500 w-100 grid">
+            <div className="bg-gradient-to-b from-blue-areatomic-50 to-white-areatomic-500 w-screen">
                 <div
                     className={`grid ${
-                        hidden ? 'w-fit mx-auto' : 'grid-cols-2'
+                        hidden ? 'w-fit' : 'grid-cols-2'
                     } py-10 md:px-10 px-3`}
                 >
                     {/* Left side */}
-                    <div className={`${!hidden && 'w-3/4'}`}>
+                    <div className={`${!hidden ? 'w-3/4' : 'w-mobile'}`}>
                         <div className="mb-10" />
                         <HeadingOne>
                             Areatomic met votre business en <b>orbite</b>
                         </HeadingOne>
                         {hidden && (
-                            <div className="grid justify-center">
+                            <div className="grid">
                                 <img
                                     src={animationGroup}
                                     id="rocket"
                                     alt="Votre business sur mesure qui décolle, by areatomic"
-                                    className="duration-1000 ease-in mx-auto"
+                                    className="duration-1000 ease-in"
                                 />
-                                <div className="mx-auto">
+                                <div className="">
                                     <ButtonPrimary
                                         onClick={() => navigate('/login')}
                                     >
@@ -238,7 +238,7 @@ const Home = (props) => {
                     </div>
                     <div>
                         <div id="listeArticle" className="mb-20">
-                            <div className="grid xl:grid-cols-3 lg:grid-cols-2 gap-3 justify-center">
+                            <div className="grid xl:grid-cols-3 lg:grid-cols-2 gap-3">
                                 {articleContext.articles?.length == 0 && (
                                     <>
                                         <div class="border border-purple-areatomic-300 bg-component-500 shadow rounded-md p-4 max-w-sm w-full">
