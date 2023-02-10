@@ -97,7 +97,7 @@ export default function ProductContextProvider({ children }) {
 
     const editProduct = async (state) => {
         const response = await authContext.request('put', `product/${id}`, {
-            title: title,
+            name: title,
             description: description,
             images: images,
             price: price,

@@ -43,9 +43,10 @@ const ImageUpload = ({ setValue }) => {
     )
 }
 
-const Image = ({ id, url, className, width, height }) => {
+const Default = ({ id, url, className, width, height }) => {
     const imageContext = useImage()
     const [value, setValue] = useState(imageContext.defaultUrl)
+    const [hover, setHover] = useState(false)
 
     useEffect(() => {
         const fetchImage = async () => {
@@ -61,15 +62,153 @@ const Image = ({ id, url, className, width, height }) => {
     }, [])
 
     return (
-        <img
-            src={value}
-            alt="Areatomic image personnalisé"
-            className={className}
-            width={width}
-            height={height}
-            style={{ maxWidth: width, height: height }}
-        />
+        <div
+            className="relative rounded-lg"
+            onMouseEnter={() => setHover(true)}
+            onMouseLeave={() => setHover(false)}
+        >
+            {hover && (
+                <div
+                    className="absolute w-full h-full flex justify-center items-center rounded-lg"
+                    style={{
+                        background: 'rgba(107, 114, 128, 0.5)',
+                        cursor: 'zoom-in',
+                    }}
+                    onClick={() => {
+                        imageContext.setZoom(true)
+                    }}
+                >
+                    <div className="grid text-center cursor-pointer">
+                        Zoom
+                        <div className="material-icons text-3xl">zoom_in</div>
+                    </div>
+                </div>
+            )}
+            <img
+                src={value}
+                alt="Areatomic image personnalisé"
+                className={className}
+                width={width}
+                height={height}
+                style={{ maxWidth: width, height: height }}
+            />
+        </div>
     )
 }
 
-export { ImageUpload, Image }
+const ImageZoom = ({ id, url }) => {
+    const imageContext = useImage()
+
+    const [value, setValue] = useState(imageContext.defaultUrl)
+    const [width, setWidth] = useState(window.innerWidth * 0.8)
+    const [height, setHeight] = useState(window.innerWidth * 0.43)
+    const [hover, setHover] = useState(false)
+
+    const [percentageX, setPercentageX] = useState(0)
+    const [percentageY, setPercentageY] = useState(0)
+    const [size, setSize] = useState(width)
+
+    useEffect(() => {
+        const fetchImage = async () => {
+            const response = await imageContext.getImageWithId(id)
+            setValue(response.url)
+        }
+
+        if (!url) {
+            fetchImage()
+        } else {
+            setValue(id)
+        }
+
+        let container = document.getElementById('zoom')
+        let img = new Image()
+        img.src = value
+
+        container.addEventListener('mousemove', (event) => {
+            const image = event.target.getBoundingClientRect()
+            const ratio = width / height
+            let x = event.clientX - image.left
+            let y = event.clientY - image.top
+
+            x = x / (container.clientWidth / 100)
+            y = (y / (container.clientWidth / ratio)) * 100
+            setPercentageX(x)
+            setPercentageY(y)
+            setSize(img.naturalWidth)
+        })
+    }, [])
+
+    return (
+        <div style={{ width: width, height: height, overflow: 'hidden' }}>
+            <div
+                id="zoom"
+                style={{
+                    width: width,
+                    height: height,
+                    backgroundImage: `url(${value})`,
+                    backgroundPosition: !hover
+                        ? 'center'
+                        : `${percentageX}% ${percentageY}%`,
+                    backgroundSize: !hover ? 'cover' : `${size}px`,
+                    transition: 'transform ease 0.3s',
+                    transform: `${hover ? 'scale(1.2)' : 'scale(1)'}`,
+                }}
+                onMouseEnter={() => setHover(true)}
+                onMouseLeave={() => setHover(false)}
+            />
+        </div>
+    )
+}
+
+const ImageSlider = ({ images }) => {
+    const imageContext = useImage()
+
+    return (
+        <div
+            className="fixed z-50 w-screen h-screen top-0 left-0 flex justify-center items-center py-3 flex-col"
+            style={{
+                background: 'rgba(107, 114, 128, 0.8)',
+            }}
+        >
+            <div
+                className="absolute material-icons top-10 right-5"
+                onClick={() => imageContext.setZoom(false)}
+            >
+                close
+            </div>
+            {images.map((image, index) => {
+                if (index === imageContext.selected)
+                    return (
+                        <ImageZoom
+                            id={typeof image === 'object' ? image.url : image}
+                            url={typeof image === 'object'}
+                        />
+                    )
+            })}
+            <div className="flex pt-2 w-full justify-center">
+                {images.map((image, index) => {
+                    return (
+                        <div
+                            className={`mr-5 h-fit flex items-center w-1/12 ${
+                                index === imageContext.selected &&
+                                'border-4 border-purple-areatomic-500 rounded'
+                            }`}
+                            onClick={() => imageContext.setSelected(index)}
+                        >
+                            <Default
+                                id={
+                                    typeof image === 'object'
+                                        ? image.url
+                                        : image
+                                }
+                                url={typeof image === 'object'}
+                            />
+                        </div>
+                    )
+                })}
+            </div>
+        </div>
+    )
+}
+
+export { ImageUpload, Default, ImageZoom, ImageSlider }

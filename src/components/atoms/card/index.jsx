@@ -1,12 +1,10 @@
 import { useState, useEffect } from 'react'
 import { ButtonPrimary, ButtonSecondary } from '../buttons'
-import { Image } from '../../organisms/image'
+import { Default } from '../../organisms/image'
 import { HeadingTwo } from '../headings'
 import arrow from '../../../assets/arrow-right.svg'
 import { useAuth } from '../../../contexts'
 import { useNavigate } from 'react-router-dom'
-
-// TODO: icon "->" sur bouton "Voir plus"
 
 export const CardWithoutImage = (props) => {
     const [hidden, setHidden] = useState(false)
@@ -50,7 +48,7 @@ export const CardProduct = ({ image, heading, price, text, edit, show }) => {
         <div className="w-card-product bg-component-500 rounded px-4 py-7">
             <HeadingTwo color="text-blue-areatomic-500">{heading}</HeadingTwo>
             <div className="mb-2"></div>
-            <Image
+            <Default
                 id={image}
                 url={false}
                 width="300px"
@@ -98,7 +96,7 @@ export const CardArticle = ({
             <HeadingTwo color="text-blue-areatomic-500">{heading}</HeadingTwo>
             <div className="mb-2"></div>
             <div className="h-40">
-                <Image
+                <Default
                     id={image}
                     url={false}
                     width="300px"

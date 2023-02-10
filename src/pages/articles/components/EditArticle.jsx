@@ -31,7 +31,7 @@ const EditArticle = () => {
             </div>
             {articleContext.cover ? (
                 <div className="relative w-full grid justify-center overflow-clip">
-                    <Image.Image
+                    <Image.Default
                         id={
                             typeof articleContext.cover === 'object'
                                 ? articleContext.cover.url

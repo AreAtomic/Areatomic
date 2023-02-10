@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import {
     ButtonPrimary,
     ButtonSecondary,
@@ -12,10 +12,11 @@ import {
     Modal,
     Navbar,
 } from '../../../components/organisms'
-import { useProduct } from '../../../contexts'
+import { useImage, useProduct } from '../../../contexts'
 
 const EditProduct = () => {
     const productContext = useProduct()
+    const imageContext = useImage()
 
     return (
         <>
@@ -28,6 +29,9 @@ const EditProduct = () => {
                     Retour
                 </div>
             </div>
+            {imageContext.zoom && (
+                <Image.ImageSlider images={productContext.images} />
+            )}
             <Input.Title
                 placeholder="Nom du produit"
                 value={productContext.title}
@@ -40,7 +44,7 @@ const EditProduct = () => {
                 <div className="relative col-span-3 grid justify-center overflow-clip">
                     {productContext.images[0] ? (
                         <>
-                            <Image.Image
+                            <Image.Default
                                 id={
                                     typeof productContext.images[0] === 'object'
                                         ? productContext.images[0].url
@@ -54,7 +58,15 @@ const EditProduct = () => {
                                 {productContext.images.map((image, index) => {
                                     if (index === 0) {
                                         return (
-                                            <div className="w-1-3 mr-5 mt-5">
+                                            <div className="w-1/3 mr-5 mt-5">
+                                                <div className="absolute cursor-pointer top-2 right-2 bg-red-500 text-white-areatomic-500 px-4 py-1 rounded-lg hover:bg-red-700">
+                                                    <div className="flex">
+                                                        Supprimer
+                                                        <div className="material-icons">
+                                                            delete
+                                                        </div>
+                                                    </div>
+                                                </div>
                                                 <Image.ImageUpload
                                                     setValue={(value) =>
                                                         productContext.setImages(
@@ -69,8 +81,20 @@ const EditProduct = () => {
                                         )
                                     }
                                     return (
-                                        <div className="mr-5 w-1/3">
-                                            <Image.Image
+                                        <div className=" relative mr-5 w-1/5">
+                                            <div
+                                                className="material-icons absolute top-1 right-1 z-50 bg-red-500 text-white-areatomic-500 p-1 rounded cursor-pointer"
+                                                onClick={() =>
+                                                    imageContext.deleteImage(
+                                                        typeof image === 'object'
+                                                            ? image._id
+                                                            : image
+                                                    )
+                                                }
+                                            >
+                                                delete
+                                            </div>
+                                            <Image.Default
                                                 id={
                                                     typeof image === 'object'
                                                         ? image.url

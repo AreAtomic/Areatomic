@@ -1,6 +1,6 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
-import { Build, Home, Services, Register, Login, Articles, Products } from './pages'
+import { Build, Home, Services, Register, Login, Articles, Products, Cart } from './pages'
 import {
     useUx,
     AuthContextProvider,
@@ -55,6 +55,7 @@ const Router = () => {
                 <Route path="/articles/:id" element={<Articles />} />
                 <Route path="/products" element={<Products />} />
                 <Route path="/services" element={<Services />} />
+                <Route path="/cart" element={<Cart />} />
                 <Route path="/register" element={<Register />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/build" element={<Build />} />
